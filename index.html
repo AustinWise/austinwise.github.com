@@ -3,9 +3,27 @@ layout: default
 title: Home
 ---
 
+<img id="myPic" src="Me.png">
+<h2>About Me</h2>
+<div>
+	I am a student at Cal Poly San Luis Obsipo working towards a BA in computer science.  I enjoy compilers and systems programming.
+	C# is the langauge I'm most experianced with, but I'm also comfortable with using C, Java, and LabVIEW.
+</div>
+
 <h2>Open Source Projects</h2>
 <ul class="posts">
 	<li><a href="https://github.com/AustinWise/m2net">m2net</a> A .NET library to develop Mongrel2 handlers.</li>
+	<li><a href="">PicoBlazeSim</a> A C# assembler and simulator for the PicoBlaze soft processor running on a Nexys2 FPGA board.
+	<li><a href="http://code.google.com/u/AustinWise/updates">EVE Map NG</a> Committed several features and bug fixes. EVE Map NG is a mapping application for the EVE Online virtual world. <small>(<a href="http://dl.eve-files.com/media/1006/GTS_1.1.535.zip">DL link</a>)</small></li>
+	<li><a href="http://github.com/AustinWise/">Additional projects</a> Publicly available on GitHub.</li>
+</ul>
+
+<h2>Contact Me</h2>
+<ul class="posts">
+	<li><a rel="me" href="mailto:AustinWise@gmail.com">AustinWise@gmail.com</a></li>
+	<li><a rel="me" href="http://www.linkedin.com/pub/austin-wise/2b/b08/699">Linked-In</a></li>
+	<li><a rel="me" href="http://www.twitter.com/AustinWise">Twitter</a></li>
+	<li><a rel="me" href="http://www.facebook.com/austin.wise">Facebook</a></li>
 </ul>
 
 <h2>Old Blog Posts</h2>
@@ -14,7 +32,5 @@ title: Home
 		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 	{% endfor %}
 </ul>
-
-<hr>
 
 <a href="http://feeds.feedburner.com/awise"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png"></a>

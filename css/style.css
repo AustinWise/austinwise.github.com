@@ -104,7 +104,7 @@ body, select, input, textarea {
    you'll want to define those yourself. */ 
 h1,h2,h3,h4,h5,h6 { font-family: "acuta-1","acuta-2", sans-serif;  font-weight: bold; }
 h1 { font-size: 150%; }
-h2 { font-size: 120%; }
+h2 { font-size: 120%; margin-top: 0.5em; }
 
 /* always force a scrollbar in non-IE */ 
 html { overflow-y: scroll; }
@@ -232,7 +232,7 @@ button {  width: auto; overflow: visible; }
 	font-size: 110%;
 	line-height: 1.5em;
 	text-align: justify;
-	width: 40em;
+	width: 50em;
 	margin: 3em auto 2em auto;
 }
 
@@ -272,6 +272,16 @@ header .homeLink
 	font-weight: normal;
 }
 
+#myPic
+{
+	float: right;
+	margin: .5em;
+}
+
+footer
+{
+	font-size: 70%;
+}
 
 
 
