@@ -94,14 +94,17 @@ pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
 body, select, input, textarea { 
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
-  color: #444; 
+  color: #2E0D23; 
   /* set your base font here, to apply evenly */
-  /* font-family: Georgia, serif;  */   
+  font-family: "anivers-1","anivers-2", sans-serif;
+  background-color: #FFEDBF;
 }
 
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+h1,h2,h3,h4,h5,h6 { font-family: "acuta-1","acuta-2", sans-serif;  font-weight: bold; }
+h1 { font-size: 150%; }
+h2 { font-size: 120%; }
 
 /* always force a scrollbar in non-IE */ 
 html { overflow-y: scroll; }
@@ -110,8 +113,8 @@ html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a, a:active, a:visited { color: #F54828; }
+a:hover { color: #F7803C; }
 
 
 ul, ol { margin-left: 1.8em; }
@@ -170,11 +173,11 @@ input:invalid, textarea:invalid {
 /* These selection declarations have to be separate.
    No text-shadow: twitter.com/miketaylr/status/12228805301 
    Also: hot pink. */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
+::-moz-selection{ background: #F54828; color:#fff; text-shadow: none; }
+::selection { background:#F54828; color:#fff; text-shadow: none; } 
 
 /*  j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; } 
+a:link { -webkit-tap-highlight-color: #F54828; } 
 
 /* make buttons play nice in IE:    
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
@@ -224,14 +227,50 @@ button {  width: auto; overflow: visible; }
     Author: 
  */
 
+#container
+{
+	font-size: 110%;
+	line-height: 1.5em;
+	text-align: justify;
+	width: 40em;
+	margin: 3em auto 2em auto;
+}
 
+body
+{
+	text-align: center;
+}
 
+ul.posts
+{
+	list-style-type: none;
+	margin-bottom: 2em;
+}
 
+ul.posts li
+{
+	line-height: 1.75em;
+}
 
+ul.posts span
+{
+	color: #666;
+	font-family: Monaco, "Courier New", monospace;
+	font-size: 80%;
+}
 
+header
+{
+	margin-bottom: 1.5em;
+	font-size: 150%;
+	font-weight: bold;
+}
 
-
-
+header .homeLink
+{
+	margin-left: 1em;
+	font-weight: normal;
+}
 
 
 
