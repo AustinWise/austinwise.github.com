@@ -96,13 +96,13 @@ body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
   color: #2E0D23; 
   /* set your base font here, to apply evenly */
-  font-family: "anivers-1","anivers-2", sans-serif;
+  font-family: sans-serif;
   background-color: #FFEDBF;
 }
 
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
-h1,h2,h3,h4,h5,h6 { font-family: "acuta-1","acuta-2", sans-serif;  font-weight: bold; }
+h1,h2,h3,h4,h5,h6 { font-family: sans-serif;  font-weight: bold; }
 h1 { font-size: 150%; }
 h2 { font-size: 120%; margin-top: 0.5em; }
 
