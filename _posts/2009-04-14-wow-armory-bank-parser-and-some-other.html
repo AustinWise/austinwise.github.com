@@ -1,10 +1,10 @@
---- 
+---
 name: wow-armory-bank-parser-and-some-other
 layout: post
 title: Wow armory bank parser and some other things
 time: 2009-04-14 00:43:00 -07:00
 ---
-I made several programs while playing world of warcraft.  He's three of them.
+I made several programs while playing World of Warcraft.  He's two of them.
 
 <h4>Bank Parser</h4>
 While I was playing the World of Warcraft with my friends, we formed a guild.  We used the guild vault to pool resources in a sort of communist style system.  My guild leader wanted to ensure that everyone was being generally fair with their contribution and usage of resource.  So I endeavored to write a program to analyze the guild bank log from <a href="http://www.wowarmory.com/">wowarmory.com</a>.
@@ -29,10 +29,3 @@ While this is by definition less than 255 characters, that is why it was so diff
 It will randomly select a ground mount while in old world, dalaran (but not Krasus' Landing), or wintergrasp.  While in any other part of northrend or out land, it will select a random flying mount.  It is kinda cumbersome to use, as the mounts are specified by their position in the mounts window.  The first m= is ground mounts will the second is flying mounts.  This only has to be updated every time you get a new mount ;-).
 
 I know there are addons such as Mounted that give you a nice UI and don't break every time a new mount is added, but I found my macro to be more reliable once I got it working.
-
-<h4>Wowhead downloader and scanner</h4>
-<a href="http://www.wowhead.com">Wowhead.com</a> has a ton of useful information on it.  For certain tasks it can be handy to have a copy of their website on your hard drive.  For example, the bank parser could be augmented to see if any materials lying around could be crafted into an item.
-
-Pointing a conventional web spider at wowhead does not work because of the site's intense usage of javascript.  However I noticed that the javascript used to define links to other pages was not too far from being JSON (duh, since JSON is just a subset of javascript).  For all the details see the code <a href="https://github.com/AustinWise/ndxwowhead/tree">on Github</a>.
-
-<a href="/images/Name that screenshot.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 265px;" src="/images/Name that screenshot.png" border="0" /></a>
