@@ -1,4 +1,4 @@
---- 
+---
 name: starting-up
 layout: post
 title: Starting Up
