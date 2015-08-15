@@ -278,6 +278,10 @@ footer
 	font-size: 70%;
 }
 
+.date
+{
+  color: #DDCB9D;
+}
 
 
 
@@ -324,4 +328,3 @@ footer
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3{ page-break-after: avoid; }
 }
-
