@@ -12,14 +12,14 @@ tags:
 While it is easy to think of the C# and the Common Language Runtime (CLR) as
 one cohesive unit, there are difference between the semantics of the CLR and the
 semantics of the Common Type System (CTS) in the CLR. The way in which the C#
-compiler implements it's semantics on top of the CTS are observable
+compiler implements its semantics on top of the CTS are observable
 and may be surprising. Specifically, the act of creating a sub class can change
 the definition of the base class.
 
 ### The long story
 
-The SDK for my work [robot][Robot] implments it's own RPC system to talk to the
-embedded controller. THe interface we expose is a proxy built on top of the
+The SDK for my work [robot][Robot] implments its own RPC system to talk to the
+embedded controller. The interface we expose is a proxy built on top of the
 `RealProxy` and `TransparentProxy` classes from .NET remoting. I decided to
 switch these proxies to be built on top of the [DynamicProxy] from [CoreFX].
 
@@ -27,7 +27,7 @@ One of the reasons I made this change was to allow some methods of the class to
 be implmented on the client side. The idea is a base class of the proxy can implement
 just the methods from an interface it wants to execute locally. The generated proxy
 subclass will fill in all the methods the base class did not define and complete the
-implemention of the interface. In C# it's perfectly to have a subclass implment an
+implemention of the interface. In C# it's perfectly valid to have a subclass implement an
 interface in this way, even if the methods on the base class are not `virtual`.
 However the [CreateType] method on `TypeBuilder` was throwing
 an `System.TypeLoadException` exception with the error complaining that the method
@@ -65,22 +65,23 @@ public class MySubClass : MyBaseClass, IHasName { }
 
 {% endhighlight %}
 
-In this little program, I have a base class `MyBaseClass` that has the implemention
-of interface `IHasName`, but does not actually implement it. Using two different
-methods I create a subclass of `MyBaseClas` that implements `IHasName`:
+In this little program, I have a class `MyBaseClass` that has the implemention
+of interface `IHasName`, but does not actually implement it. Also not that the
+`Name` property is not marked as virtual. This program creates two subclass of
+`MyBaseClass` that implement `IHasName`:
 
-  * Create `MySubClass` using C#.
-  * Create `MyGeneratedType` using `System.Reflection.Emit`.
+  * `MySubClass` is created using C#.
+  * `MyGeneratedType` is created using `System.Reflection.Emit`.
 
 The `System.Reflection.Emit` method appeared to work in the same way as the C#
 version until I commented-out the definition of `MySubClass` on line 26. Oddly the
-existence of this sub class effected an the ability for an unrelated generated class
-to implement the interface!
+existence of this sub class determined whether or not the generated subclass was
+able to implement the interface!
 
 ### What's going on here?
 
 Obviously the C# compiler was doing more than I expected. To find out what it was
-doing, I compiler the program twice, once with the subclass and once without. I
+doing, I compiled the program twice, once with the subclass and once without. I
 then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) represention
 of the programs and diffed them. Below is the relevant portion of the diff
 between the two:
@@ -135,7 +136,7 @@ to the C# compiler however, you get only the method named `get_Name`.
 These sort of details effect you if you are creating code-generating tools that
 directly generate .NET Classes and MSIL without
 going through a C# compiler. You have to be aware of the division of responsibility
-between the C# compiler and the CLR when trying to emulate the sysmantics of C#
+between the C# compiler and the CLR when trying to emulate the semantics of C#
 with your code generator. In my case, I made the simplifying rule that all
 member on the base class have to be marked as virtual. This is easy to verify
 with automated testing and frees me from having to generate stub functions to
