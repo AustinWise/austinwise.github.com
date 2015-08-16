@@ -20,7 +20,7 @@ layout: nil
  <entry>
    <title>{{ post.title }}</title>
    <link href="http://www.awise.us{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <updated>{{ post.time | date_to_xmlschema }}</updated>
    <id>http://www.awise.us{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
