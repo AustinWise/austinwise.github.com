@@ -2,9 +2,7 @@
 name: csharp-vs-clr
 title: C# Vs. CLR
 layout: post
-time: 2015-08-16 12:00:00 -08:00
-tags:
-- draft
+time: 2015-08-16 00:26:00 -08:00
 ---
 
 ### Summary
