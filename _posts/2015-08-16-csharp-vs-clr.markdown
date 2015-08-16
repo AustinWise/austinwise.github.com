@@ -18,20 +18,20 @@ the definition of the base class.
 
 ### The long story
 
-The SDK for my work [robot][Robot] implments its own RPC system to talk to the
+The SDK for my work [robot][Robot] implements its own RPC system to talk to the
 embedded controller. The interface we expose is a proxy built on top of the
-`RealProxy` and `TransparentProxy` classes from .NET remoting. I decided to
+`RealProxy` and `TransparentProxy` classes from .NET Remoting. I decided to
 switch these proxies to be built on top of the [DynamicProxy] from [CoreFX].
 
 One of the reasons I made this change was to allow some methods of the class to
-be implmented on the client side. The idea is a base class of the proxy can implement
+be implemented on the client side. The idea is a base class of the proxy can implement
 just the methods from an interface it wants to execute locally. The generated proxy
 subclass will fill in all the methods the base class did not define and complete the
-implemention of the interface. In C# it's perfectly valid to have a subclass implement an
+implementation of the interface. In C# it's perfectly valid to have a subclass implement an
 interface in this way, even if the methods on the base class are not `virtual`.
 However the [CreateType] method on `TypeBuilder` was throwing
 an `System.TypeLoadException` exception with the error complaining that the method
-"does not have an implementation". I was able to fix this by marking the relevent
+"does not have an implementation". I was able to fix this by marking the relevant
 members are `virtual`, however I was not able to reproduce the exception in my
 simple test program:
 
@@ -65,7 +65,7 @@ public class MySubClass : MyBaseClass, IHasName { }
 
 {% endhighlight %}
 
-In this little program, I have a class `MyBaseClass` that has the implemention
+In this little program, I have a class `MyBaseClass` that has the implementation
 of interface `IHasName`, but does not actually implement it. Also not that the
 `Name` property is not marked as virtual. This program creates two subclass of
 `MyBaseClass` that implement `IHasName`:
@@ -82,7 +82,7 @@ able to implement the interface!
 
 Obviously the C# compiler was doing more than I expected. To find out what it was
 doing, I compiled the program twice, once with the subclass and once without. I
-then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) represention
+then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) representation
 of the programs and diffed them. Below is the relevant portion of the diff
 between the two:
 
@@ -107,7 +107,7 @@ keyword makes the member respect the C# code's wish to make this member non-over
 These contradictory attributes are reminiscent of how a static class in C# is
 implemented by marking the class as both `sealed` and `abstract`.
 
-### Cross Assembly Inheritence
+### Cross Assembly Inheritance
 
 After seeing how the C# compiler implements interfaces on non-virtual methods
 when both the base class and sub class live in the same assembly, the obvious question
