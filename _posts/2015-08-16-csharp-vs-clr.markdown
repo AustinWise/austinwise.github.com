@@ -18,21 +18,21 @@ the definition of the base class.
 
 ### The long story
 
-The SDK for my work [robot][Robot] implements its own RPC system to talk to the
+The SDK for my work [robot][Robot] implments its own RPC system to talk to the
 embedded controller. The interface we expose is a proxy built on top of the
-`RealProxy` and `TransparentProxy` classes from .NET Remoting. I decided to
+`RealProxy` and `TransparentProxy` classes from .NET remoting. I decided to
 switch these proxies to be built on top of the [DynamicProxy] from [CoreFX].
 
 One of the reasons I made this change was to allow some methods of the class to
-be implemented on the client side. The idea is a base class of the proxy can implement
+be implemented on the client side. The idea is that a base class of the proxy can implement
 just the methods from an interface it wants to execute locally. The generated proxy
 subclass will fill in all the methods the base class did not define and complete the
-implementation of the interface. In C# it's perfectly valid to have a subclass implement an
+implemention of the interface. In C#, it's perfectly valid to have a subclass implement an
 interface in this way, even if the methods on the base class are not `virtual`.
-However the [CreateType] method on `TypeBuilder` was throwing
-an `System.TypeLoadException` exception with the error complaining that the method
-"does not have an implementation". I was able to fix this by marking the relevant
-members are `virtual`, however I was not able to reproduce the exception in my
+However, the [CreateType] method on `TypeBuilder` was throwing
+an `System.TypeLoadException` exception, with the error complaining that the method
+"does not have an implementation". I was able to fix this by marking the relevent
+members are `virtual`, however, I was not able to reproduce the exception in my
 simple test program:
 
 {% highlight csharp linenos %}
@@ -65,24 +65,24 @@ public class MySubClass : MyBaseClass, IHasName { }
 
 {% endhighlight %}
 
-In this little program, I have a class `MyBaseClass` that has the implementation
-of interface `IHasName`, but does not actually implement it. Also not that the
-`Name` property is not marked as virtual. This program creates two subclass of
+In this little program, I have a class `MyBaseClass` that has the implemention
+of interface `IHasName`, but does not actually implement it. Also note that the
+`Name` property is not marked as virtual. This program creates two subclasses of
 `MyBaseClass` that implement `IHasName`:
 
   * `MySubClass` is created using C#.
   * `MyGeneratedType` is created using `System.Reflection.Emit`.
 
 The `System.Reflection.Emit` method appeared to work in the same way as the C#
-version until I commented-out the definition of `MySubClass` on line 26. Oddly the
+version - until I commented out the definition of `MySubClass` on line 26. Oddly, the
 existence of this sub class determined whether or not the generated subclass was
 able to implement the interface!
 
 ### What's going on here?
 
-Obviously the C# compiler was doing more than I expected. To find out what it was
+Obviously, the C# compiler was doing more than I expected. To find out what it was
 doing, I compiled the program twice, once with the subclass and once without. I
-then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) representation
+then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) represention
 of the programs and diffed them. Below is the relevant portion of the diff
 between the two:
 
@@ -107,7 +107,7 @@ keyword makes the member respect the C# code's wish to make this member non-over
 These contradictory attributes are reminiscent of how a static class in C# is
 implemented by marking the class as both `sealed` and `abstract`.
 
-### Cross Assembly Inheritance
+### Cross Assembly Inheritence
 
 After seeing how the C# compiler implements interfaces on non-virtual methods
 when both the base class and sub class live in the same assembly, the obvious question
@@ -129,16 +129,16 @@ public class MySubClass : MyBaseClass, IHasName
 I say "roughly equivalent" because there is a small difference between code generated
 by the compiler and what you are able to express using C#. The above code generates
 both a property called `Name` and a method called `get_Name`. If you leave it up
-to the C# compiler however, you get only the method named `get_Name`.
+to the C# compiler, however, you get only the method named `get_Name`.
 
 ### Why do I care?
 
-These sort of details effect you if you are creating code-generating tools that
+These sort of details affect you if you are creating code-generating tools that
 directly generate .NET Classes and MSIL without
 going through a C# compiler. You have to be aware of the division of responsibility
 between the C# compiler and the CLR when trying to emulate the semantics of C#
-with your code generator. In my case, I made the simplifying rule that all
-member on the base class have to be marked as virtual. This is easy to verify
+with your code generator. In my case, I simplified things by making a rule that all
+members on the base class have to be marked as virtual. This is easy to verify
 with automated testing and frees me from having to generate stub functions to
 emulate the C# behavior.
 
