@@ -140,8 +140,13 @@ members on the base class have to be marked as virtual. This is easy to verify
 with automated testing and frees me from having to generate stub functions to
 emulate the C# behavior.
 
+
+### Acknowledgements
+
+Thanks to [Caspar] for reviewing drafts of this post.
+
 [Robot]: http://www.brooks.com/products/semiconductor-automation/factory-automation/spartan-sorters
 [DynamicProxy]: https://github.com/dotnet/corefx/tree/0987afcd536743bf3a5cf868b3598e898f4aea53/src/System.Reflection.DispatchProxy
 [CoreFx]: https://github.com/dotnet/corefx
 [CreateType]: https://msdn.microsoft.com/en-us/library/system.reflection.emit.typebuilder.createtype.aspx
-[IlSpy]: http://ilspy.net/
+[Caspar]: https://github.com/CasparHansen
