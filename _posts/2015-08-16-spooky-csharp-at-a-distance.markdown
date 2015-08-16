@@ -1,32 +1,35 @@
 ---
-name: spooky-csharp-at-a-distance
-title: CSharp Vs. CLR
+name: csharp-vs-clr
+title: C# Vs. CLR
 layout: post
-time: 2015-08-15 18:00:00 -08:00
+time: 2015-08-16 12:00:00 -08:00
 tags:
 - draft
 ---
 
-### TL;DR
+### Summary
 
-While it is easy to think of the CSharp and the Common Language Runtime (CLR) as
+While it is easy to think of the C# and the Common Language Runtime (CLR) as
 one cohesive unit, there are difference between the semantics of the CLR and the
-semantics of the Common Type System (CTS) in the CLR. The way in which the CSharp
-compiler goes about implementing it's semantics on top of the CTS are observable
+semantics of the Common Type System (CTS) in the CLR. The way in which the C#
+compiler implements it's semantics on top of the CTS are observable
 and may be surprising. Specifically, the act of creating a sub class can change
 the definition of the base class.
 
 ### The long story
 
-At work my [robot][Robot] runs on the .NET Compact Framework while clients access
-it using the regular Windows verion of .NET. Since the .NET Compact Framework lacks
-remoting, I have implemented my RPC system. On the client side I'm using the new
-[DynamicProxy] from [CoreFX] to impelement the client proxy.
+The SDK for my work [robot][Robot] implments it's own RPC system to talk to the
+embedded controller. THe interface we expose is a proxy built on top of the
+`RealProxy` and `TransparentProxy` classes from .NET remoting. I decided to
+switch these proxies to be built on top of the [DynamicProxy] from [CoreFX].
 
-I wanted to have a base class define some members of an interface without
-implmenting the interface. Then the generated proxy class would implement this
-interface and use the existing methods to fullfill the interface contract, exactly
-as you can when writing a class in C#. However the [CreateType] method was throwing
+One of the reasons I made this change was to allow some methods of the class to
+be implmented on the client side. The idea is a base class of the proxy can implement
+just the methods from an interface it wants to execute locally. The generated proxy
+subclass will fill in all the methods the base class did not define and complete the
+implemention of the interface. In C# it's perfectly to have a subclass implment an
+interface in this way, even if the methods on the base class are not `virtual`.
+However the [CreateType] method on `TypeBuilder` was throwing
 an `System.TypeLoadException` exception with the error complaining that the method
 "does not have an implementation". I was able to fix this by marking the relevent
 members are `virtual`, however I was not able to reproduce the exception in my
@@ -66,18 +69,21 @@ In this little program, I have a base class `MyBaseClass` that has the implement
 of interface `IHasName`, but does not actually implement it. Using two different
 methods I create a subclass of `MyBaseClas` that implements `IHasName`:
 
-  * Create `MySubClass` using CSharp.
+  * Create `MySubClass` using C#.
   * Create `MyGeneratedType` using `System.Reflection.Emit`.
 
-The `System.Reflection.Emit` method appeared to work in the same way as the CSharp
+The `System.Reflection.Emit` method appeared to work in the same way as the C#
 version until I commented-out the definition of `MySubClass` on line 26. Oddly the
 existence of this sub class effected an the ability for an unrelated generated class
 to implement the interface!
 
 ### What's going on here?
 
-I decided to take a look at the IL of my test program without the subclass and
-with the sub class. Below is the relevant portion of the diff between the two:
+Obviously the C# compiler was doing more than I expected. To find out what it was
+doing, I compiler the program twice, once with the subclass and once without. I
+then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) represention
+of the programs and diffed them. Below is the relevant portion of the diff
+between the two:
 
 {% highlight diff %}
 --- a/no_subclass.il
@@ -96,17 +102,17 @@ with the sub class. Below is the relevant portion of the diff between the two:
 By adding the sub class, the member on the base class is now marked as `newslot`,
 `virtual`, and `final`. The `newslot` and `virtual` keywords make this method
 appear in the V-Table so that it can take part in dynamic dispatch, but the `final`
-keyword makes the member respect the CSharp code's wish to make this member non-overrideable.
+keyword makes the member respect the C# code's wish to make this member non-overrideable.
 These contradictory attributes are reminiscent of how a static class in C# is
 implemented by marking the class as both `sealed` and `abstract`.
 
 ### Cross Assembly Inheritence
 
-After seeing how the CSharp compiler implements interfaces on non-virtual methods
+After seeing how the C# compiler implements interfaces on non-virtual methods
 when both the base class and sub class live in the same assembly, the obvious question
 to ask is how this works when the base class is in a different assembly. Surely
 the other assembly is not modified, yet this scenario works. The code that the
-CSharp compiler generates in this case is roughly equivalent to explicitly
+C# compiler generates in this case is roughly equivalent to explicitly
 implementing the interface and forwarding the call to the base class:
 
 {% highlight csharp %}
@@ -127,7 +133,7 @@ to the C# compiler however, you get only the method named `get_Name`.
 ### Why do I care?
 
 These sort of details effect you if you are creating code-generating tools that
-directly generate .NET Classes and Microsoft Intermediate Langauge (MSIL) without
+directly generate .NET Classes and MSIL without
 going through a C# compiler. You have to be aware of the division of responsibility
 between the C# compiler and the CLR when trying to emulate the sysmantics of C#
 with your code generator. In my case, I made the simplifying rule that all
@@ -140,18 +146,3 @@ emulate the C# behavior.
 [CoreFx]: https://github.com/dotnet/corefx
 [CreateType]: https://msdn.microsoft.com/en-us/library/system.reflection.emit.typebuilder.createtype.aspx
 [IlSpy]: http://ilspy.net/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
