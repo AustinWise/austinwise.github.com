@@ -126,7 +126,7 @@ public class MySubClass : MyBaseClass, IHasName
 }
 {% endhighlight %}
 
-I saw "roughly equivalent" because there is a small difference between code generated
+I say "roughly equivalent" because there is a small difference between code generated
 by the compiler and what you are able to express using C#. The above code generates
 both a property called `Name` and a method called `get_Name`. If you leave it up
 to the C# compiler however, you get only the method named `get_Name`.
