@@ -1,6 +1,6 @@
 ---
 name: csharp-vs-clr
-title: C# Vs. CLR
+title: C# vs. CLR
 layout: post
 time: 2015-08-16 00:26:00 -08:00
 ---
