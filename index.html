@@ -32,6 +32,13 @@ title: Home
 	{% endfor %}
 </ul>
 
+<h2>Accepted Pull Requests</h2>
+<ul class="posts">
+	{% for pull in site.data.pull_requests %}
+		<li>{{ pull.date }} &raquo; <a href="{{ pull.url }}">{{ pull.title }}</a></li>
+	{% endfor %}
+</ul>
+
 <h2>Contact Me</h2>
 <ul class="posts">
 	<li><a rel="me" href="mailto:AustinWise@gmail.com">AustinWise@gmail.com</a></li>
