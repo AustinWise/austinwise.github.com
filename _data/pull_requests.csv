@@ -1,4 +1,5 @@
 date,title,url
+2016-02-13,Fix console colors in .NET CLI,https://github.com/dotnet/cli/pull/1212
 2016-02-04,More efficiently invoke commands in the .NET CLI,https://github.com/dotnet/cli/pull/1208
 2015-12-01,Fix DllImport in .NET Native,https://github.com/dotnet/corert/pull/450
 2015-07-08,Fix StringBuilder leak in .NET Core on Unix,https://github.com/dotnet/corefx/pull/2277
