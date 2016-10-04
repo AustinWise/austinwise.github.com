@@ -1,4 +1,7 @@
 date,title,url
+2016-07-22,Fix crash in ILSpy when opening .NET Core assemblies,https://github.com/icsharpcode/ILSpy/pull/739
+2016-07-12,Fix crash in Mono.Cecil when opening .NET Core PDBs,https://github.com/jbevain/cecil/pull/279
+2016-02-15,Refactor 'dotnet help' command,https://github.com/dotnet/cli/pull/1231
 2016-02-13,Fix console colors in .NET CLI,https://github.com/dotnet/cli/pull/1212
 2016-02-04,More efficiently invoke commands in the .NET CLI,https://github.com/dotnet/cli/pull/1208
 2015-12-01,Fix DllImport in .NET Native,https://github.com/dotnet/corert/pull/450
