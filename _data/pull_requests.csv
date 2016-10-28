@@ -1,4 +1,5 @@
 date,title,url
+2016-10-27,Fix conversion from CorJitFlag2 enum to JitFlag,https://github.com/dotnet/coreclr/pull/7857
 2016-07-22,Fix crash in ILSpy when opening .NET Core assemblies,https://github.com/icsharpcode/ILSpy/pull/739
 2016-07-12,Fix crash in Mono.Cecil when opening .NET Core PDBs,https://github.com/jbevain/cecil/pull/279
 2016-06-27,Fix contributor list links for .NET Core 1.0 release,https://github.com/dotnet/core/pull/163
