@@ -1,4 +1,9 @@
 date,title,url
+2017-03-16,Fix formating in Nuget documentation;https://github.com/NuGet/docs.microsoft.com-nuget/pull/217
+2017-03,14,https://github.com/dotnet/corefx/pull/17091,Fix .NET CoreFx native build on FreeBSD
+2017-03-02,Removing CoreCLR hosting methods that always return false,https://github.com/dotnet/coreclr/pull/9930
+2017-03-01,Remove CLRThreadpoolHosted as it always returns false,https://github.com/dotnet/coreclr/pull/9899
+2017-01-13,Add basic support for inheritdoc to DocFx,https://github.com/dotnet/docfx/pull/1178
 2016-10-27,Fix conversion from CorJitFlag2 enum to JitFlag,https://github.com/dotnet/coreclr/pull/7857
 2016-07-22,Fix crash in ILSpy when opening .NET Core assemblies,https://github.com/icsharpcode/ILSpy/pull/739
 2016-07-12,Fix crash in Mono.Cecil when opening .NET Core PDBs,https://github.com/jbevain/cecil/pull/279
