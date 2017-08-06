@@ -5,15 +5,16 @@ title: SmartOS Home Server
 time: 2013-03-10 18:00:00 -08:00
 ---
 I am no longer satisfied with Windows Home Server and have decided to replace it with SmartOS.  WHS’s Drive Extender does offer some data check-summing and redundancy.  However it is a bolt-on solution to NTFS that only offers support for mirroring data across disks.  Dive Extender also moves data between disks every hour which causes media streaming to noticeably skip.
+
 I had a few requirements for my new home server operating system:
-*	Has a file system that ensures data integrity – not just metadata integrity.
-*	Ability to run Windows in a VM (so I don’t have to maintain a separate physical server for running Windows apps)
+  * Has a file system that ensures data integrity – not just metadata integrity.
+  * Ability to run Windows in a VM (so I don’t have to maintain a separate physical server for running Windows apps)
 
 # My SmartOS configuration
 
-Setting up SmartOS as a home server proved challenging. I need to expose the files on the server to windows clients.  On a conventional Solaris-based operating system you would type “zfs set sharesmb=on zones/shares” and you would be done.  However SmartOS does not persist /etc between reboots.  This prevents adding users or using idmap to record what windows users map to which unix users.  Also sharesmb does not work on a delegated filesystem inside of a zone.
+Setting up SmartOS as a home server proved challenging. I need to expose the files on the server to windows clients.  On a conventional Solaris-based operating system you would type `zfs set sharesmb=on zones/shares` and you would be done.  However SmartOS does not persist /etc between reboots.  This prevents adding users or using idmap to record what windows users map to which unix users.  Also sharesmb does not work on a delegated filesystem inside of a zone.
 
-The solution was to run Samba inside the zone.  I decided to create my shared folders in a dataset outside of the zone’s dataset and used LOFS to map the folders into any zones that needed them.  This allows me to delete zones without worrying about losing data and for many zones. For example I can map a subset of files into a zone as readonly and then share them over HTTP.  If I mess up my HTTP configuration the files are safe from getting deleted or modified.
+The solution was to run Samba inside the zone.  I decided to create my shared folders in a dataset outside of the zone’s dataset and used [LOFS](https://illumos.org/man/7FS/lofs) to map the folders into any zones that needed them.  This allows me to delete zones without worrying about losing data and for many zones. For example I can map a subset of files into a zone as readonly and then share them over HTTP.  If I mess up my HTTP configuration the files are safe from getting deleted or modified.
 
 # Alterative file systems considered
 
