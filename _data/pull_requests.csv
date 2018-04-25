@@ -1,4 +1,5 @@
 date,title,url
+2018-03-27,Add support for BindingFlags.DoNotWrapExceptions to Mono,https://github.com/mono/mono/pull/7863
 2017-09-02,Add support for BindingFlags.DoNotWrapExceptions to CoreCLR,https://github.com/dotnet/coreclr/pull/13767
 2017-05-02,Fix Access Violation (segfault) in System.Reflection.DispatchProxy,https://github.com/dotnet/corefx/pull/19181
 2017-03-23,Fix backwards compatibility bug between dotnet.exe and hostpolicy.dll,https://github.com/dotnet/core-setup/pull/1818
