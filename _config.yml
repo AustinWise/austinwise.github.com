@@ -1,3 +1,7 @@
 markdown: kramdown
 highlighter: rouge
 repository: AustinWise/austinwise.github.com
+feed:
+  path: atom.xml
+plugins:
+  - jekyll-feed
