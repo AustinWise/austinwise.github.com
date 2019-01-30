@@ -11,14 +11,12 @@ title: Home
 	I enjoy playing around with parsers, static analysis, and file systems.
 </div>
 
-<h2>Open Source Projects</h2>
+<h2>Selected Github Projects</h2>
 <ul class="posts">
-	<li><a href="https://github.com/AustinWise/ZfsSharp/"> ZfsSharp</a> A .NET program that reads the ZFS filesystem.</li>
+	<li><a href="https://github.com/AustinWise/ZfsSharp/">ZfsSharp</a> A .NET program that reads the ZFS filesystem.</li>
 	<li><a href="https://github.com/AustinWise/m2net">m2net</a> A .NET library to develop Mongrel2 handlers.</li>
 	<li><a href="https://github.com/AustinWise/AustinLisp">Austin Lisp</a> A little lisp implementation in C#.</li>
-	<li><a href="https://github.com/AustinWise/RegexEngine">RegexEngine</a> Converts regular expressions into MSIL bytecode.  Applies some of what I learned in my Theory of Computation class to &quote;the real world&quote;.</li>
-	<li><a href="https://github.com/AustinWise/PicoblazeSim">PicoBlazeSim</a> A C# assembler and simulator for the PicoBlaze soft processor running on a Nexys2 FPGA board.</li>
-	<li><a href="http://code.google.com/u/AustinWise/updates">EVE Map NG</a> Committed several features and bug fixes. EVE Map NG is a mapping application for the EVE Online virtual world. <small>(<a href="http://dl.eve-files.com/media/1006/GTS_1.1.535.zip">DL link</a>)</small></li>
+	<li><a href="https://github.com/AustinWise/RegexEngine">RegexEngine</a> Converts regular expressions into MSIL bytecode.</li>
 	<li><a href="http://github.com/AustinWise/">Additional projects</a> Publicly available on GitHub.</li>
 </ul>
 
@@ -35,7 +33,10 @@ title: Home
 <h2>Accepted Pull Requests</h2>
 <ul id="pr" class="posts">
 	{% for pull in site.data.pull_requests %}
+		{% if pull.pending == 'true' %}
+		{% else %}
 		<li><span>{{ pull.date | date_to_string }}</span> &raquo; <a href="{{ pull.url }}">{{ pull.title }}</a></li>
+		{% endif %}
 	{% endfor %}
 </ul>
 

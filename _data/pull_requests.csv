@@ -1,4 +1,9 @@
-date,title,url
+date,title,url,pending
+2018-10-27,Check for InsufficientExecutionStackException by type rather than by name,https://github.com/dotnet/roslyn/pull/30817,true
+2018-10-26,Remove some dead code related to cross-appdomain exceptions,https://github.com/dotnet/coreclr/pull/20634,true
+2018-10-07,Remove ancient Rotor code from CoreCLR,https://github.com/dotnet/coreclr/pull/20298
+2018-10-04,Remove obselete remoting code from CoreCLR,https://github.com/dotnet/coreclr/pull/20277,true
+2018-05-07,Fix double unlock in nni_posix_pollq_fini,https://github.com/nanomsg/nng/pull/418,true
 2018-03-27,Add support for BindingFlags.DoNotWrapExceptions to Mono,https://github.com/mono/mono/pull/7863
 2017-09-02,Add support for BindingFlags.DoNotWrapExceptions to CoreCLR,https://github.com/dotnet/coreclr/pull/13767
 2017-05-02,Fix Access Violation (segfault) in System.Reflection.DispatchProxy,https://github.com/dotnet/corefx/pull/19181
