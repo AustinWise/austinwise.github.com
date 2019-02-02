@@ -17,6 +17,7 @@
 
 ## SOURCE CODE
 *.bat      text eol=crlf
+*.cmd      text eol=crlf
 *.coffee   text
 *.css      text
 *.htm      text
