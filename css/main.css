@@ -93,7 +93,7 @@ textarea {
 
 
 /* ==========================================================================
-   Author's custom styles
+   Austin's custom styles
    ========================================================================== */
 
 #container
@@ -101,8 +101,14 @@ textarea {
 	font-size: 110%;
 	line-height: 1.5em;
 	text-align: justify;
-	width: 50em;
+	padding: 0.5em;
 	margin: 3em auto 2em auto;
+}
+
+@media only screen and (min-width: 52em) {
+  #container {
+    width: 50em;
+  }
 }
 
 body
@@ -131,7 +137,7 @@ ul.posts span
 header
 {
 	margin-bottom: 1.5em;
-	font-size: 150%;
+	font-size: 200%;
 	font-weight: bold;
 }
 
@@ -145,6 +151,7 @@ header .homeLink
 {
 	float: right;
 	margin: .5em;
+	border-radius: 1em;
 }
 
 footer
