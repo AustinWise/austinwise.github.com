@@ -85,5 +85,5 @@ While there are currently no security controls, it's my private network so for t
 [OldPost]: /2013/03/10/smartos-home-server.html
 [SmartOS]: https://joyent.com/smartos
 [Config]:  https://www.github.com/AustinWise/ServerConfiga
-[LoFS]:    http://example.com/
+[LoFS]:    https://smartos.org/man/7FS/lofs
 [DKP]:     https://www.github.com/AustinWise/DinnerKillPoints
