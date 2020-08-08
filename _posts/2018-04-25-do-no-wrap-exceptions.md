@@ -165,13 +165,13 @@ Thanks to [Caspar Hansen][Caspar] for reviewing drafts of this.
 [TargetInvocationException]: https://docs.microsoft.com/en-us/dotnet/api/system.reflection.targetinvocationexception
 [CreateDelegate]: https://docs.microsoft.com/en-us/dotnet/api/system.reflection.methodinfo.createdelegate
 [ProxyBug]: https://github.com/dotnet/corefx/pull/19181
-[IlSpy]: http://www.ilspy.net/
+[IlSpy]: https://github.com/icsharpcode/ILSpy
 [DesignReview]: https://github.com/dotnet/corefx/issues/22866
 [BindingFlags]: https://docs.microsoft.com/en-us/dotnet/api/system.reflection.bindingflags
 [Kanamori]: https://github.com/AtsushiKan
 [OP_PR]: https://github.com/dotnet/corert/pull/4433
 [MY_PR]: https://github.com/dotnet/coreclr/pull/13767
-[BOTR]: https://github.com/dotnet/coreclr/blob/master/Documentation/botr/mscorlib.md
+[BOTR]: https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/corelib.md
 [Commit]: https://github.com/dotnet/coreclr/commit/1f9aeeb7a3685bc7fd1098fc50d91ac81bae4873
 [Mono]: https://github.com/mono/mono/pull/7863
 [Framework]: https://github.com/Microsoft/dotnet/issues/717

@@ -145,8 +145,8 @@ emulate the C# behavior.
 
 Thanks to [Caspar] for reviewing drafts of this post.
 
-[Robot]: http://www.brooks.com/products/semiconductor-automation/factory-automation/spartan-sorters
+[Robot]: https://www.brooks.com/products/semiconductor-automation/factory-automation/spartan-sorters
 [DynamicProxy]: https://github.com/dotnet/corefx/tree/0987afcd536743bf3a5cf868b3598e898f4aea53/src/System.Reflection.DispatchProxy
 [CoreFx]: https://github.com/dotnet/corefx
-[CreateType]: https://msdn.microsoft.com/en-us/library/system.reflection.emit.typebuilder.createtype.aspx
+[CreateType]: https://docs.microsoft.com/dotnet/api/system.reflection.emit.typebuilder.createtype
 [Caspar]: https://github.com/CasparHansen

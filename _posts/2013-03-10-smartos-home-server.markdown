@@ -4,6 +4,7 @@ layout: post
 title: SmartOS Home Server
 time: 2013-03-10 18:00:00 -08:00
 ---
+
 I am no longer satisfied with Windows Home Server and have decided to replace it with SmartOS.  WHS’s Drive Extender does offer some data check-summing and redundancy.  However it is a bolt-on solution to NTFS that only offers support for mirroring data across disks.  Dive Extender also moves data between disks every hour which causes media streaming to noticeably skip.
 
 I had a few requirements for my new home server operating system:
