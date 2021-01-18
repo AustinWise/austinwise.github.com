@@ -5,3 +5,10 @@ feed:
   path: atom.xml
 plugins:
   - jekyll-feed
+exclude:
+  - "*.sh"
+  - "*.cmd"
+  - Dockerfile
+  - "Gemfile*"
+  - CNAME
+  - README.md
