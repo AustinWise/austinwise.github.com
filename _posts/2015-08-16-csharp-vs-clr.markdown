@@ -42,11 +42,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        var asm = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("testasm"), AssemblyBuilderAccess.Run);
+        var asm = AppDomain.CurrentDomain.DefineDynamicAssembly(
+            new AssemblyName("testasm"), AssemblyBuilderAccess.Run);
         var mod = asm.DefineDynamicModule("testmod");
-        var tb = mod.DefineType("MyGeneratedType", TypeAttributes.Public, typeof(MyBaseClass));
+        var tb = mod.DefineType("MyGeneratedType",
+            TypeAttributes.Public, typeof(MyBaseClass));
         tb.AddInterfaceImplementation(typeof(IHasName));
-        var instance = (IHasName)Activator.CreateInstance(tb.CreateType());
+        var instance = (IHasName)Activator.CreateInstance(
+            tb.CreateType());
         Console.WriteLine(instance.Name);
     }
 }
