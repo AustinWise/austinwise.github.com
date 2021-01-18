@@ -1,0 +1,6 @@
+
+# ignore everything
+*
+
+# we only actually need the Gemfiles
+!Gemfile*
