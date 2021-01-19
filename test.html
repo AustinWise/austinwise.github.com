@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <link rel="shortcut icon" href="/Me.png">
+    <style>
+        .cpu_container {
+            display: flex;
+            width: 520px;
+        }
+
+        .cpu {
+            display: flex;
+            flex-direction: column;
+            border: red solid 3px;
+            margin: 5px;
+            width: 100px;
+            height: 200px;
+        }
+
+        .running_thread {
+            border: black solid 1px;
+            margin: 5px;
+        }
+
+        .waiting_thread {
+            border: black solid 1px;
+            margin: 5px;
+            position: absolute;
+            /* border: black solid 1px; */
+            /* background-color: black; */
+        }
+
+        .frame {
+            border: blue solid 2px;
+            margin: 5px;
+            opacity: 0;
+            height: 20px;
+        }
+
+        .runqueue {
+            border: purple solid 3px;
+            margin: 5px;
+            width: 150px;
+            height: 200px;
+        }
+
+        .label {
+            margin: 5px;
+        }
+    </style>
+
+    <script type="module" src="/assets/js/my_test_module.js"></script>
+</head>
+
+<body>
+
+    <div id="naive_threaded" class="cpu_container" >
+        <div class="cpu">
+            <div class="label">CPU 1</div>
+            <div class="running_thread">
+                <div class="label">Thread 1</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">F3()</div>
+                <div class="frame f2">F2()</div>
+                <div class="frame f1">F1()</div>
+            </div>
+        </div>
+        <div class="cpu">
+            <div class="label">CPU 2</div>
+            <div class="running_thread">
+                <div class="label">Thread 2</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">F三()</div>
+                <div class="frame f2">F二()</div>
+                <div class="frame f1">F一()</div>
+            </div>
+        </div>
+        <div class="cpu">
+            <div class="label">CPU 3</div>
+            <div class="running_thread">
+                <div class="label">Thread 3</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">Fさん()</div>
+                <div class="frame f2">Fに()</div>
+                <div class="frame f1">Fいち()</div>
+            </div>
+        </div>
+        <div class="runqueue">
+            <div class="label">waiting threads</div>
+            <div class="waiting_thread">
+                <div class="label">Thread 4</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">FC()</div>
+                <div class="frame f2">FB()</div>
+                <div class="frame f1">FA()</div>
+            </div>
+            <div class="waiting_thread">
+                <div class="label">Thread 5</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">Fオ()</div>
+                <div class="frame f2">Fエ()</div>
+                <div class="frame f1">Fア()</div>
+            </div>
+            <div class="waiting_thread">
+                <div class="label">Thread 6</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">Fお()</div>
+                <div class="frame f2">Fえ()</div>
+                <div class="frame f1">Fあ()</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="reactor" class="cpu_container" style="display: none;">
+        <div class="cpu">
+            <div class="label">CPU 1</div>
+            <div class="thread">
+                <div class="label">Thread 3</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">F3()</div>
+                <div class="frame f2">F2()</div>
+                <div class="frame f1">F1()</div>
+            </div>
+        </div>
+        <div class="cpu">
+            <div class="label">CPU 2</div>
+            <div class="thread">
+                <div class="label">Thread 3</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">F3()</div>
+                <div class="frame f2">F2()</div>
+                <div class="frame f1">F1()</div>
+            </div>
+        </div>
+        <div class="cpu">
+            <div class="label">CPU 3</div>
+            <div class="thread">
+                <div class="label">Thread 3</div>
+                <div class="frame f4">syscall</div>
+                <div class="frame f3">F3()</div>
+                <div class="frame f2">F2()</div>
+                <div class="frame f1">F1()</div>
+            </div>
+        </div>
+        <div class="runqueue">
+            <div class="label">waiting threads</div>
+        </div>
+    </div> -->
+</body>
+
+</html>
