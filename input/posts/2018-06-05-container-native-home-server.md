@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: _post
 title: The Container-Native Home Server
 time: 2018-06-05 01:00:00 -08:00
 ---

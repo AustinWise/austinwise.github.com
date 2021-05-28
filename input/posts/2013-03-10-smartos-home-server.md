@@ -1,6 +1,6 @@
 ---
 name: smart-os-home-server
-layout: post
+layout: _post
 title: SmartOS Home Server
 time: 2013-03-10 18:00:00 -08:00
 ---

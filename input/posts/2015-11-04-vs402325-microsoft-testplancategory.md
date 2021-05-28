@@ -1,7 +1,7 @@
 ---
 name: vs402325-microsoft-testplancategory
 title: VS402325 Work item type category Microsoft.TestPlanCategory does not exist in project
-layout: post
+layout: _post
 time: 2015-11-04 15:00:00 -08:00
 ---
 

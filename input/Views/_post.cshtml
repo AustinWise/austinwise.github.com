@@ -1,0 +1,14 @@
+@model IDocument
+
+@{
+    Layout = @"_layout.cshtml";
+    ViewBag.Title = Model.GetTitle();
+}
+
+<h1>
+    @Model.GetTitle()
+</h1>
+
+<!-- Posts template -->
+
+@RenderBody()
