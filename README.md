@@ -1,22 +1,24 @@
 # How to build
 
-In ubuntu 20.04:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff3f28b6-3f4d-452f-9bb1-6d60e1c1faad/deploy-status)](https://app.netlify.com/sites/austinwise/deploys)
 
-```bash
-sudo apt install ruby ruby-dev ruby-bundler libxml2-dev libxslt1-dev
-bundle config build.nokogiri --use-system-libraries
-bundle install
-bundle exec jekyll server
-```
+This site is built with Jekyll and deployed on Netlify. Therefore building is done
+on top of the
+[Netlify Docker image](https://github.com/netlify/build-image/blob/focal/Dockerfile).
+To keep things speedy when testing locally, I build a Docker image on top of
+this with all the Ruby gems installed.
 
-## Updating the version of everything
+There are two types of scripts:
 
-```bash
-rm Gemfile.lock
-bundle install
-```
+* serve: build the docker image and serve the site
+* update_deps: update the dependancy versions in Gemfile.lock
 
-## Building with docker
+Each of these has two entry points:
 
-Run serve_docker.cmd. The `--watch` argument does not seem to work for
-`jekyll serve` when running in a container.
+* _linux.sh: runs from Linux
+* _windows.cmd: runs from Windows
+
+# Why not GitHub Pages?
+
+Seriously, that would be quite a bit simpler. But I tried to upload a large HTML
+file and it was not showing up on my website.

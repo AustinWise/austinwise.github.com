@@ -2,4 +2,4 @@ _site
 .jekyll-metadata
 *.swp
 /vendor
-
+.jekyll-cache/
