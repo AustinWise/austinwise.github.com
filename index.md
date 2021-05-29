@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.liquid
 title: Home
 ---
 
@@ -21,23 +21,25 @@ title: Home
 
 <h2>Blog Posts</h2>
 <ul class="posts">
-	{% for post in site.posts %}
-		{% if post.tags contains 'draft' %}
+	{% for post in collections.posts.pages %}
+		{% if post.data.nolist %}
 		{% else %}
-			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+ <li><span>{{ post.published_date | date: "%Y-%m-%d" }}</span> &raquo; <a href="{{ post.permalink }}">{{ post.title }}</a></li>
 		{% endif %}
 	{% endfor %}
 </ul>
 
+<!--
 <h2>Accepted Pull Requests</h2>
 <ul id="pr" class="posts">
 	{% for pull in site.data.pull_requests %}
 		{% if pull.pending == 'true' %}
 		{% else %}
-		<li><span>{{ pull.date | date_to_string }}</span> &raquo; <a href="{{ pull.url }}">{{ pull.title }}</a></li>
+		<li><span>{{ pull.date }}</span> &raquo; <a href="{{ pull.url }}">{{ pull.title }}</a></li>
 		{% endif %}
 	{% endfor %}
 </ul>
+-->
 
 <h2>Contact Me</h2>
 <ul class="posts">
@@ -46,4 +48,4 @@ title: Home
 	<li><a rel="me" href="https://www.linkedin.com/in/austinwise">Linked-In</a></li>
 </ul>
 
-<a href="/atom.xml"><img src="/images/feed-icon32x32.png">Atom Feed</a>
+<a href="/rss.xml"><img src="/images/feed-icon32x32.png">RSS Feed</a>

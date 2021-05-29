@@ -1,0 +1,9 @@
+
+site:
+  title: cobalt blog
+  description: Blog Posts Go Here
+  base_url: https://www.awise.us/
+  data:
+    nolist: false
+posts:
+  rss: rss.xml

@@ -1,8 +1,8 @@
 ---
-name: wow-armory-bank-parser-and-some-other
-layout: post
+layout: post.liquid
 title: Wow armory bank parser and some other things
-time: 2009-04-14 00:43:00 -07:00
+published_date: 2009-04-14 00:43:00 -07:00
+permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 I made several programs while playing World of Warcraft.  He's two of them.

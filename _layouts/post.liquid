@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% include "head.liquid" %}
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            Austin Wise
+        </header>
+        <main>
+            <a class="homeLink" href="/">Go to home page</a>
+            <hr />
+            <div class="post">
+                <span class="date">{{ page.published_date | date: "%Y-%m-%d" }}</span>
+                <h2>{{ page.title }}</h2>
+                {{ page.content }}
+            </div>
+        </main>
+        <footer>
+            {% include "footer.liquid" %}
+        </footer>
+    </div>
+
+</body>
+
+</html>

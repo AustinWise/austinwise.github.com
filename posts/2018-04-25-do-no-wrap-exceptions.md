@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: post.liquid
 title: "Adding a new feature to CoreCLR: BindingFlags.DoNotWrapException"
-time: 2018-04-25 00:00:00 -08:00
+published_date: 2018-04-25 00:00:00 -08:00
+permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 # Background

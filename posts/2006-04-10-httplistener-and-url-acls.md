@@ -1,8 +1,8 @@
 --- 
-name: httplistener-and-url-acls
-layout: post
+layout: post.liquid
 title: HttpListener and URL ACLs
-time: 2006-04-10 23:03:00 -07:00
+published_date: 2006-04-10 23:03:00 -07:00
+permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 UPDATE: A new version of my tool is available <a href="/2007/08/25/url-reservation-modifer.html">here</a>.
 <br/>

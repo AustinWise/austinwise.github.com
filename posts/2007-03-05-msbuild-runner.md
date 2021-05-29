@@ -1,9 +1,10 @@
 --- 
-name: msbuild-runner
-layout: post
+layout: post.liquid
 title: MSBuild Runner
-time: 2007-03-05 23:47:00 -08:00
-tags: draft
+published_date: 2007-03-05 23:47:00 -08:00
+data:
+  nolist: true
+permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 Have you ever wanted to quickly compile a Visual Studio solution or project without opening Visual Studio?  Well, now you can!

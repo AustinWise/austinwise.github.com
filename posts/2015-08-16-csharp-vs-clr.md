@@ -1,8 +1,8 @@
 ---
-name: csharp-vs-clr
 title: C# vs. CLR
-layout: post
-time: 2015-08-16 00:26:00 -08:00
+layout: post.liquid
+published_date: 2015-08-16 00:26:00 -08:00
+permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 ### Summary
@@ -33,7 +33,7 @@ an `System.TypeLoadException` exception, with the error complaining that the met
 members are `virtual`, however, I was not able to reproduce the exception in my
 simple test program:
 
-{% highlight csharp linenos %}
+```c#
 using System;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -63,8 +63,7 @@ public class MyBaseClass
     public string Name { get { return "Inigo Montoya"; } }
 }
 public class MySubClass : MyBaseClass, IHasName { }
-
-{% endhighlight %}
+```
 
 In this little program, I have a class `MyBaseClass` that has the implemention
 of interface `IHasName`, but does not actually implement it. Also note that the
@@ -87,7 +86,7 @@ then used `ILDasm` to dump the Microsoft Intermediate Langauge (MSIL) representi
 of the programs and diffed them. Below is the relevant portion of the diff
 between the two:
 
-{% highlight diff %}
+```diff
 --- a/no_subclass.il
 +++ b/subclass_exists.il
 @@ -128,7 +128,7 @@
@@ -99,7 +98,7 @@ between the two:
            instance string get_Name() cil managed
    {
      // Code size       11 (0xb)
-{% endhighlight %}
+```
 
 By adding the sub class, the member on the base class is now marked as `newslot`,
 `virtual`, and `final`. The `newslot` and `virtual` keywords make this method
@@ -117,7 +116,7 @@ the other assembly is not modified, yet this scenario works. The code that the
 C# compiler generates in this case is roughly equivalent to explicitly
 implementing the interface and forwarding the call to the base class:
 
-{% highlight csharp %}
+```c#
 public class MySubClass : MyBaseClass, IHasName
 {
     string IHasName.Name
@@ -125,7 +124,7 @@ public class MySubClass : MyBaseClass, IHasName
         get { return base.Name; }
     }
 }
-{% endhighlight %}
+```
 
 I say "roughly equivalent" because there is a small difference between code generated
 by the compiler and what you are able to express using C#. The above code generates
