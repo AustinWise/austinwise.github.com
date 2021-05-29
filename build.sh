@@ -3,6 +3,8 @@
 set -euo pipefail
 set -x
 
+cd $(dirname "$(readlink -f "$0")")
+
 curl -o cobalt -SsL https://github.com/AustinWise/cobalt.rs/releases/download/austin-v1/cobalt
 
 sha256sum -c cobalt_checksum.txt

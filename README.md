@@ -2,21 +2,32 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ff3f28b6-3f4d-452f-9bb1-6d60e1c1faad/deploy-status)](https://app.netlify.com/sites/austinwise/deploys)
 
-This site is built with Jekyll and deployed on Netlify. Therefore building is done
-on top of the
-[Netlify Docker image](https://github.com/netlify/build-image/blob/focal/Dockerfile).
-To keep things speedy when testing locally, I build a Docker image on top of
-this with all the Ruby gems installed.
+This site is built with
+[Cobalt](https://cobalt-org.github.io/)
+and deployed on Netlify.
 
-There are two types of scripts:
+There are some of scripts:
 
-* serve: build the docker image and serve the site
-* update_deps: update the dependancy versions in Gemfile.lock
+* build.sh: the build script invoked by Netlify to build the site
+* serve.sh: serve the site
+* serve.cmd: serve the site *on Windows*
 
-Each of these has two entry points:
+# Building in Docker
 
-* _linux.sh: runs from Linux
-* _windows.cmd: runs from Windows
+ Even though Cobalt is easy to run outside a container,
+there are some scripts for running Cobalt inside the
+[Netlify Docker image](https://github.com/netlify/build-image/blob/focal/Dockerfile)
+to make sure it works as intended. There are scripts to start the Docker container
+from Linux and Windows:
+
+* serve_docker.cmd
+* serve_docker.sh
+
+# Custom build of Cobalt
+
+Currently there are some small bugs in Cobalt:
+
+https://github.com/AustinWise/cobalt.rs
 
 # Why not GitHub Pages?
 
