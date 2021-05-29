@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2021-05-28T08:06:47+00:00</updated>
+  <id>/atom.xml</id>
+  <entry>
+    <title type="html">New RSS Feed</title>
+    <link href="/" rel="alternate" type="text/html" title="New RSS Feed" />
+    <published>2021-05-28T08:06:47+00:00</published>
+    <updated>2021-05-28T08:06:47+00:00</updated>
+    <id>/</id>
+    <content type="html">
+      Please update your RSS reader to point to:
+      &lt;a href=&quot;https://www.awise.us/rss.xml&quot;&gt;https://www.awise.us/rss.xml&lt;/a&gt;
+    </content>
+    <author>
+      <name></name>
+    </author>
+    <summary type="html">Background</summary>
+  </entry>
+</feed>
