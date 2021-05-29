@@ -1,5 +1,3 @@
-_site
-.jekyll-metadata
+/_site/
 *.swp
-/vendor
-.jekyll-cache/
+/cobalt
