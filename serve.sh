@@ -1,4 +1,4 @@
 #!/bin/bash
 set -xeuo pipefail
 ./build.sh
-./cobalt serve --host 0.0.0.0
+./cobalt serve -c input/_cobalt.yml -d _site --host 0.0.0.0
