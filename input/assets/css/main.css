@@ -109,6 +109,11 @@ textarea {
   #container {
     width: 50em;
   }
+
+  #container img
+  {
+    max-width: 50em;
+  }
 }
 
 body
@@ -173,7 +178,6 @@ a, a:active, a:visited { color: #F54828; }
 a:hover { color: #F7803C; }
 ::-moz-selection{ background: #F54828; color:#fff; text-shadow: none; }
 ::selection { background:#F54828; color:#fff; text-shadow: none; }
-
 
 
 
