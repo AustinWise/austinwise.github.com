@@ -8,4 +8,4 @@ if (!(Test-Path -Path .\cobalt.exe)) {
     }
     Expand-Archive -Path .\cobalt.zip -DestinationPath .
 }
-& .\cobalt.exe serve -c input/_cobalt.yml -d _site
+& .\cobalt.exe serve -c input/_cobalt.yml -d _site $args

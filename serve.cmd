@@ -2,4 +2,4 @@
 setlocal
 cd %~dp0
 
-PowerShell -NoProfile -NonInteractive -File serve.ps1
+PowerShell -NoProfile -NonInteractive -File serve.ps1 %*
