@@ -1,10 +1,14 @@
 ---
-layout: post
-title: Smallest .NET Hello Worlds
-time: 2019-01-01 00:00:00 -08:00
-tags:
-  - draft
+layout: post.liquid
+title: Smallest .NET Hello World
+published_date: 2021-05-31 20:50:00 -07:00
+permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
+description: |
+      An investigation into the size overhead of different ways of deploying .NET
+      applications.
 ---
+
+
 
 # notes
 
