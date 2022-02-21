@@ -1,5 +1,41 @@
 [
     {
+        "date": "2021-08-24",
+        "title": "Fix silent parsing errors in Ledger",
+        "url": "https://github.com/ledger/ledger/pull/2041",
+        "pending": false
+    },
+    {
+        "date": "2021-05-30",
+        "title": "Statically link RipGrep on Windows",
+        "url": "https://github.com/BurntSushi/ripgrep/pull/1613",
+        "pending": false
+    },
+    {
+        "date": "2021-04-01",
+        "title": "Add high DPI support to XML notepad",
+        "url": "https://github.com/microsoft/XmlNotepad/pull/72",
+        "pending": false
+    },
+    {
+        "date": "2021-02-26",
+        "title": "In pkgsrc, fix packaging of mitmproxy",
+        "url": "https://github.com/NetBSD/pkgsrc/pull/84",
+        "pending": false
+    },
+    {
+        "date": "2021-02-26",
+        "title": "Remove dead code from the CoreCLR IO threadpool",
+        "url": "https://github.com/dotnet/runtime/pull/47093",
+        "pending": false
+    },
+    {
+        "date": "2020-08-04",
+        "title": "Decrease the binary size of coreclr.dll slightly",
+        "url": "https://github.com/dotnet/runtime/pull/40254",
+        "pending": false
+    },
+    {
         "date": "2019-12-13",
         "title": "Some fixes for .NET bindings for wasmtime",
         "url": "https://github.com/bytecodealliance/wasmtime/pull/718",
