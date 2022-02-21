@@ -1,1 +1,182 @@
-[]
+[
+    {
+        "date": "2019-12-13",
+        "title": "Some fixes for .NET bindings for wasmtime",
+        "url": "https://github.com/bytecodealliance/wasmtime/pull/718",
+        "pending": false
+    },
+    {
+        "date": "2019-12-5",
+        "title": "Fix GC hole in .NET bindings for wasmtime",
+        "url": "https://github.com/bytecodealliance/wasmtime/pull/680",
+        "pending": false
+    },
+    {
+        "date": "2019-10-25",
+        "title": "Normalize git commondir path in sourcelink",
+        "url": "https://github.com/dotnet/sourcelink/pull/463",
+        "pending": false
+    },
+    {
+        "date": "2019-3-27",
+        "title": "Allow using relative paths with .NET single file bundler",
+        "url": "https://github.com/dotnet/core-setup/pull/5594",
+        "pending": false
+    },
+    {
+        "date": "2018-10-27",
+        "title": "Check for InsufficientExecutionStackException by type rather than by name",
+        "url": "https://github.com/dotnet/roslyn/pull/30817",
+        "pending": false
+    },
+    {
+        "date": "2018-10-26",
+        "title": "Remove some dead code related to cross-appdomain exceptions",
+        "url": "https://github.com/dotnet/coreclr/pull/20634",
+        "pending": false
+    },
+    {
+        "date": "2018-10-7",
+        "title": "Remove ancient Rotor code from CoreCLR",
+        "url": "https://github.com/dotnet/coreclr/pull/20298",
+        "pending": false
+    },
+    {
+        "date": "2018-10-7",
+        "title": "Remove ancient Rotor commonts from CoreCLR",
+        "url": "https://github.com/dotnet/coreclr/pull/20298",
+        "pending": false
+    },
+    {
+        "date": "2018-10-4",
+        "title": "Remove obsolete remoting code from CoreCLR",
+        "url": "https://github.com/dotnet/coreclr/pull/20277",
+        "pending": false
+    },
+    {
+        "date": "2018-5-7",
+        "title": "Fix double unlock in nni_posix_pollq_fini",
+        "url": "https://github.com/nanomsg/nng/pull/418",
+        "pending": false
+    },
+    {
+        "date": "2018-3-27",
+        "title": "Add support for BindingFlags.DoNotWrapExceptions to Mono",
+        "url": "https://github.com/mono/mono/pull/7863",
+        "pending": false
+    },
+    {
+        "date": "2017-9-2",
+        "title": "Add support for BindingFlags.DoNotWrapExceptions to CoreCLR",
+        "url": "https://github.com/dotnet/coreclr/pull/13767",
+        "pending": false
+    },
+    {
+        "date": "2017-5-2",
+        "title": "Fix Access Violation (segfault) in System.Reflection.DispatchProxy",
+        "url": "https://github.com/dotnet/corefx/pull/19181",
+        "pending": false
+    },
+    {
+        "date": "2017-3-23",
+        "title": "Fix backwards compatibility bug between dotnet.exe and hostpolicy.dll",
+        "url": "https://github.com/dotnet/core-setup/pull/1818",
+        "pending": false
+    },
+    {
+        "date": "2017-3-16",
+        "title": "Fix formating in Nuget documentation",
+        "url": "https://github.com/NuGet/docs.microsoft.com-nuget/pull/217",
+        "pending": false
+    },
+    {
+        "date": "2017-3-14",
+        "title": "Fix .NET CoreFx native build on FreeBSD",
+        "url": "https://github.com/dotnet/corefx/pull/17091",
+        "pending": false
+    },
+    {
+        "date": "2017-3-2",
+        "title": "Removing CoreCLR hosting methods that always return false",
+        "url": "https://github.com/dotnet/coreclr/pull/9930",
+        "pending": false
+    },
+    {
+        "date": "2017-3-1",
+        "title": "Remove CLRThreadpoolHosted as it always returns false",
+        "url": "https://github.com/dotnet/coreclr/pull/9899",
+        "pending": false
+    },
+    {
+        "date": "2017-1-13",
+        "title": "Add basic support for inheritdoc to DocFx",
+        "url": "https://github.com/dotnet/docfx/pull/1178",
+        "pending": false
+    },
+    {
+        "date": "2016-10-27",
+        "title": "Fix conversion from CorJitFlag2 enum to JitFlag",
+        "url": "https://github.com/dotnet/coreclr/pull/7857",
+        "pending": false
+    },
+    {
+        "date": "2016-7-22",
+        "title": "Fix crash in ILSpy when opening .NET Core assemblies",
+        "url": "https://github.com/icsharpcode/ILSpy/pull/739",
+        "pending": false
+    },
+    {
+        "date": "2016-7-12",
+        "title": "Fix crash in Mono.Cecil when opening .NET Core PDBs",
+        "url": "https://github.com/jbevain/cecil/pull/279",
+        "pending": false
+    },
+    {
+        "date": "2016-6-27",
+        "title": "Fix contributor list links for .NET Core 1.0 release",
+        "url": "https://github.com/dotnet/core/pull/163",
+        "pending": false
+    },
+    {
+        "date": "2016-2-15",
+        "title": "Refactor 'dotnet help' command",
+        "url": "https://github.com/dotnet/cli/pull/1231",
+        "pending": false
+    },
+    {
+        "date": "2016-2-13",
+        "title": "Fix console colors in .NET CLI",
+        "url": "https://github.com/dotnet/cli/pull/1212",
+        "pending": false
+    },
+    {
+        "date": "2016-2-4",
+        "title": "More efficiently invoke commands in the .NET CLI",
+        "url": "https://github.com/dotnet/cli/pull/1208",
+        "pending": false
+    },
+    {
+        "date": "2015-12-1",
+        "title": "Fix DllImport in .NET Native",
+        "url": "https://github.com/dotnet/corert/pull/450",
+        "pending": false
+    },
+    {
+        "date": "2015-7-8",
+        "title": "Fix StringBuilder leak in .NET Core on Unix",
+        "url": "https://github.com/dotnet/corefx/pull/2277",
+        "pending": false
+    },
+    {
+        "date": "2015-6-1",
+        "title": "Small doc fix in Joyent's sdc-cnapi documentation",
+        "url": "https://github.com/joyent/sdc-cnapi/pull/4",
+        "pending": false
+    },
+    {
+        "date": "2012-12-28",
+        "title": "Documentation fix in zsnapper",
+        "url": "https://github.com/calmh/zsnapper.old/pull/1",
+        "pending": false
+    }
+]

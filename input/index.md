@@ -29,17 +29,17 @@ title: Home
 	{% endfor %}
 </ul>
 
-<!--
-<h2>Accepted Pull Requests</h2>
-<ul id="pr" class="posts">
+
+<h2 id="pr">Accepted Pull Requests</h2>
+<ul class="posts">
 	{% for pull in site.data.pull_requests %}
 		{% if pull.pending == 'true' %}
 		{% else %}
-		<li><span>{{ pull.date }}</span> &raquo; <a href="{{ pull.url }}">{{ pull.title }}</a></li>
+<li><span>{{ pull.date }}</span> &raquo; <a href="{{ pull.url }}">{{ pull.title }}</a></li>
 		{% endif %}
 	{% endfor %}
 </ul>
--->
+
 
 <h2>Contact Me</h2>
 <ul class="posts">
