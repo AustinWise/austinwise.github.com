@@ -173,6 +173,7 @@ pre
 {
     /* give code blocks a little breathing room */
     padding: 0.4em;
+    overflow-x: scroll;
 }
 
 html
