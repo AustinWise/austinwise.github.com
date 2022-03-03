@@ -7,15 +7,15 @@ title: Home
 <h2>About Me</h2>
 <div>
 	I am a software engineer.
-	I enjoy playing around with embedded systems, static analysis, and file systems.
+	I enjoy fiddling with computers.
 </div>
 
 <h2>Selected Github Projects</h2>
 <ul class="posts">
+	<li><a href="https://smeagol.dev/">Smeagol</a> A Rust-based personal wiki.</li>
+	<li><a href="https://github.com/AustinWise/DinnerKillPoints/">ZfsSharp</a> An ASP.NET Core website for tracking debts between friends</li>
+	<li><a href="https://github.com/AustinWise/TaxStuff/">TaxStuff</a> basic federal tax return calculator</li>
 	<li><a href="https://github.com/AustinWise/ZfsSharp/">ZfsSharp</a> A .NET program that reads the ZFS filesystem.</li>
-	<li><a href="https://github.com/AustinWise/m2net">m2net</a> A .NET library to develop Mongrel2 handlers.</li>
-	<li><a href="https://github.com/AustinWise/AustinLisp">Austin Lisp</a> A little lisp implementation in C#.</li>
-	<li><a href="https://github.com/AustinWise/RegexEngine">RegexEngine</a> Converts regular expressions into MSIL bytecode.</li>
 	<li><a href="http://github.com/AustinWise/">Additional projects</a> Publicly available on GitHub.</li>
 </ul>
 
