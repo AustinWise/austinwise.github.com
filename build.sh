@@ -24,7 +24,7 @@ case $os in
         ;;
 esac
 
-curl -o cobalt.tar.gz -SsL  https://github.com/cobalt-org/cobalt.rs/releases/download/${version}/cobalt-${version}-${arch}-${vendor}-${os}.tar.gz
+curl -o cobalt.tar.gz -SsfL https://github.com/cobalt-org/cobalt.rs/releases/download/${version}/cobalt-${version}-${arch}-${vendor}-${os}.tar.gz
 # shasum -a 256 -c checksum-${os}-${arch}.txt
 if ! shasum -a 256 -c checksum-${os}-${arch}.txt ; then
     echo actual SHA256:
