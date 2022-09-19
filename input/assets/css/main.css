@@ -373,3 +373,8 @@ a:hover { color: #F7803C; }
         page-break-after: avoid;
     }
 }
+
+table, td, th {
+    border-width: 1px;
+    border-style: solid;
+}
