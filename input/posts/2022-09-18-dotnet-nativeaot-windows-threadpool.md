@@ -24,6 +24,16 @@ save two platforms:
 
 This post is about the second of those two exceptions.
 
+Update 2022-09-19:
+[Michal Strehovský](https://github.com/MichalStrehovsky/),
+the software engineer on the .NET team who implemented many parts of NativeAOT
+and evangelized its use over the years,
+[clarifies](https://twitter.com/MStrehovsky/status/1571741674438787073)
+that the future versions of .NET NativeAOT on Windows may or may not change to
+use the common C# thread pool implementation. The current implementation is not
+a deliberate choice, but rather the state of the codebase at the time
+the ship deadline came.
+
 ### NativeAOT
 
 NativeAOT (short for Native Ahead-of-time) is a new form factor of .NET that
