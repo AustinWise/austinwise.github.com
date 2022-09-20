@@ -378,3 +378,7 @@ table, td, th {
     border-width: 1px;
     border-style: solid;
 }
+
+.post img {
+    max-width: 100%;
+}
