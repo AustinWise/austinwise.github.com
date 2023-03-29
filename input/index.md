@@ -44,7 +44,7 @@ title: Home
 <h2>Contact Me</h2>
 <ul class="posts">
 	<li>Electronically mail me: my first name at this domain</li>
-	<li><a real="me" href="https://mastodon.kame.moe/@turtle">Mastodon</a></li>
+	<li><a rel="me" href="https://mastodon.kame.moe/@turtle">Mastodon</a></li>
 	<li><a rel="me" href="http://www.twitter.com/AustinWise">Twitter</a></li>
 	<li><a rel="me" href="https://www.linkedin.com/in/austinwise">Linked-In</a></li>
 </ul>
