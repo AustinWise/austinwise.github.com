@@ -1,7 +1,7 @@
 ---
 layout: post.liquid
 title: Wow armory bank parser and some other things
-published_date: 2009-04-14 00:43:00 -07:00
+published_date: 2009-04-14 00:43:00 -0700
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 

@@ -1,7 +1,7 @@
 --- 
 layout: post.liquid
 title: How to disable download zone flagging in Firefox 3
-published_date: 2008-07-10 00:11:00 -07:00
+published_date: 2008-07-10 00:11:00 -0700
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 <a href="https://bp0.blogger.com/__h2InWDADvE/SHW31W_YQ6I/AAAAAAAAAFU/jkBasn9GLnk/s1600-h/FlaggedDownload.png"><img style="float:right; margin:0 0 10px 10px;cursor:pointer; cursor:hand;" src="https://bp0.blogger.com/__h2InWDADvE/SHW31W_YQ6I/AAAAAAAAAFU/jkBasn9GLnk/s400/FlaggedDownload.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5221281470338319266" /></a>

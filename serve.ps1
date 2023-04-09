@@ -1,11 +1,14 @@
 $ProgressPreference = 'SilentlyContinue'
-if (!(Test-Path -Path .\cobalt.exe)) {
+if (!(Test-Path -Path .\cobalt\cobalt.exe)) {
     Write-Output "Downloading cobalt"
-    Invoke-WebRequest -UseBasicParsing -OutFile cobalt.zip https://github.com/cobalt-org/cobalt.rs/releases/download/v0.16.5/cobalt-v0.16.5-x86_64-pc-windows-msvc.zip
+    Invoke-WebRequest -UseBasicParsing -OutFile cobalt.zip https://github.com/cobalt-org/cobalt.rs/releases/download/v0.18.3/cobalt-v0.18.3-x86_64-pc-windows-msvc.zip
     $hash = Get-FileHash -Algorithm SHA256 .\cobalt.zip
-    if ($hash.Hash -ne "3CEA67F4A2BBB62E42B12ABAC29AA5C5842804E481EAF30E63B65C52975953B7") {
+    if ($hash.Hash -ne "01F658867B03459D218CAC88FF18A4DFD836745A222239568A8AE7BADEF9A5E3") {
         throw "failed to valdate hash"
     }
-    Expand-Archive -Path .\cobalt.zip -DestinationPath .
+    if (-not (test-path cobalt)) {
+        mkdir cobalt
+    }
+    Expand-Archive -Path .\cobalt.zip -DestinationPath cobalt
 }
-& .\cobalt.exe serve -c input/_cobalt.yml -d _site $args
+& .\cobalt\cobalt.exe serve -c input/_cobalt.yml -d _site $args

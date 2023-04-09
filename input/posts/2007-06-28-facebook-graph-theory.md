@@ -1,7 +1,7 @@
 --- 
 layout: post.liquid
 title: Facebook Graph Theory
-published_date: 2007-06-28 11:54:00 -07:00
+published_date: 2007-06-28 11:54:00 -0700
 data:
   nolist: true
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}

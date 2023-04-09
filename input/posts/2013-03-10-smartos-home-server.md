@@ -1,7 +1,7 @@
 ---
 layout: post.liquid
 title: SmartOS Home Server
-published_date: 2013-03-10 18:00:00 -08:00
+published_date: 2013-03-10 18:00:00 -0800
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 

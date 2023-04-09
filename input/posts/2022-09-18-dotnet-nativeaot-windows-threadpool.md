@@ -1,7 +1,7 @@
 ---
 layout: post.liquid
 title: The ThreadPool in .NET 7 NativeAOT uses the Windows thread pool
-published_date: 2022-09-18 20:15:00 -08:00
+published_date: 2022-09-18 20:15:00 -0800
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 

@@ -1,7 +1,7 @@
 --- 
 layout: post.liquid
 title: MSBuild Runner
-published_date: 2007-03-05 23:47:00 -08:00
+published_date: 2007-03-05 23:47:00 -0800
 data:
   nolist: true
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}

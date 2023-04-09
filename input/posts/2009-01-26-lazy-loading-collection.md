@@ -1,7 +1,7 @@
 --- 
 layout: post.liquid
 title: Lazy Loading Collection
-published_date: 2009-01-26 16:50:00 -08:00
+published_date: 2009-01-26 16:50:00 -0800
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 

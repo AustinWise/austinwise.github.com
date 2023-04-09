@@ -1,7 +1,7 @@
 ---
 title: C# vs. CLR
 layout: post.liquid
-published_date: 2015-08-16 00:26:00 -08:00
+published_date: 2015-08-16 00:26:00 -0800
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 

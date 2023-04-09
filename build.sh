@@ -5,7 +5,7 @@ set -x
 
 cd $(dirname "$(readlink -f "$0")")
 
-version=v0.16.5
+version=v0.18.3
 
 os=$(uname -s | tr A-Z a-z) 
 vendor=unknown
@@ -31,6 +31,7 @@ if ! shasum -a 256 -c checksum-${os}-${arch}.txt ; then
     shasum -a 256 cobalt.tar.gz
     exit 1
 fi
-tar xf cobalt.tar.gz
+mkdir -p cobalt
+tar xf cobalt.tar.gz -C cobalt
 
-./cobalt build -c input/_cobalt.yml -d _site
+./cobalt/cobalt build -c input/_cobalt.yml -d _site

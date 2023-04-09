@@ -1,7 +1,7 @@
 --- 
 layout: post.liquid
 title: Mentos Volcano
-published_date: 2006-06-10 23:19:00 -07:00
+published_date: 2006-06-10 23:19:00 -0700
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 

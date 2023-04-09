@@ -1,7 +1,7 @@
 ---
 layout: post.liquid
 title: Url Reservation Modifer
-published_date: 2007-08-25 16:38:00 -07:00
+published_date: 2007-08-25 16:38:00 -0700
 permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
