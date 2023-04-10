@@ -1,6 +1,7 @@
 ---
 layout: default.liquid
 title: Home
+permalink: /
 ---
 
 <img id="myPic" src="Me.png">

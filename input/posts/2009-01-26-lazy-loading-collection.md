@@ -2,7 +2,6 @@
 layout: post.liquid
 title: Lazy Loading Collection
 published_date: 2009-01-26 16:50:00 -0800
-permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 So I came across an interesting situation in a program I was writing recently.  I had a bit of code that takes a list of image URLs to download and display.  It shows the UI immediately while it downloads more pictures in the background.  However in some cases each URL needs to be transformed a bit and each transform required another web request.  If I did all the transforms before starting to download the first image there would be a large pause before anything could be shown to the user.

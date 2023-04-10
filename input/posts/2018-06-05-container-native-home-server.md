@@ -2,7 +2,6 @@
 layout: post.liquid
 title: The Container-Native Home Server
 published_date: 2018-06-05 01:00:00 -0800
-permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 # Background

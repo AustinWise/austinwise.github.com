@@ -2,7 +2,6 @@
 layout: post.liquid
 title: The ThreadPool in .NET 7 NativeAOT uses the Windows thread pool
 published_date: 2022-09-18 20:15:00 -0800
-permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 Over the course of the .NET 6 and .NET 7 release, the .NET team has worked

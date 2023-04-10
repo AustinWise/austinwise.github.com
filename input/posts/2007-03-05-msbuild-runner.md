@@ -4,7 +4,6 @@ title: MSBuild Runner
 published_date: 2007-03-05 23:47:00 -0800
 data:
   nolist: true
-permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 Have you ever wanted to quickly compile a Visual Studio solution or project without opening Visual Studio?  Well, now you can!

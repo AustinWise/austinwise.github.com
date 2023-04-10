@@ -7,3 +7,5 @@ site:
     nolist: false
 posts:
   rss: rss.xml
+default:
+  permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}

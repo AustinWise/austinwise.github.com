@@ -2,7 +2,6 @@
 title: VS402325 Work item type category Microsoft.TestPlanCategory does not exist in project
 layout: post.liquid
 published_date: 2015-11-04 15:00:00 -0800
-permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 I tried to create a Test Plan on our Team Foundation Server today but I

@@ -4,7 +4,6 @@ title: Facebook Graph Theory
 published_date: 2007-06-28 11:54:00 -0700
 data:
   nolist: true
-permalink: /{{year}}/{{month}}/{{day}}/{{slug}}{{ext}}
 ---
 
 After the AP test, all I had left to do in Calculus BC was to give a presentation at the end of the year on some mathematical topic.  I have always been interested in <a href="https://en.wikipedia.org/wiki/Graph_theory">graph theory</a>, and my partner thought it was an ok idea.  Then I had to find some way to make this abstract subject tangible to my peers (the people doing pi had it easy; all they did was give everyone some pie).
