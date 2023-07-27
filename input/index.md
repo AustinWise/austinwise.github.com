@@ -14,7 +14,7 @@ permalink: /
 <h2>Selected Github Projects</h2>
 <ul class="posts">
 	<li><a href="https://smeagol.dev/">Smeagol</a> A Rust-based personal wiki.</li>
-	<li><a href="https://github.com/AustinWise/DinnerKillPoints/">ZfsSharp</a> An ASP.NET Core website for tracking debts between friends</li>
+	<li><a href="https://github.com/AustinWise/DinnerKillPoints/">DinnerKillPoints</a> An ASP.NET Core website for tracking debts between friends</li>
 	<li><a href="https://github.com/AustinWise/TaxStuff/">TaxStuff</a> basic federal tax return calculator</li>
 	<li><a href="https://github.com/AustinWise/ZfsSharp/">ZfsSharp</a> A .NET program that reads the ZFS filesystem.</li>
 	<li><a href="http://github.com/AustinWise/">Additional projects</a> Publicly available on GitHub.</li>
