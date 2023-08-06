@@ -10,4 +10,4 @@ Today I am releasing a tool that makes it easy to create URL reservations.  Why 
 
 ![](/images/UrlAclModifer.png)
 
-<a href="https://archive.codeplex.com/?p=UrlReservation">Download the binaries and the source code at CodePlex.</a>
+<a href="https://github.com/AustinWise/UrlAclModifier">Download the source code at GitHub.</a>
