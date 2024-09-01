@@ -48,7 +48,7 @@ permalink: /
 	<li><a rel="me" href="https://mastodon.kame.moe/@turtle">Mastodon</a></li>
 	<li><a rel="me" href="http://www.twitter.com/AustinWise">Twitter</a></li>
 	<li><a rel="me" href="https://www.linkedin.com/in/austinwise">Linked-In</a></li>
-	<li><a rel="me" href="https://bsky.app/profile/austinwise.bsky.social">Bluesky</a></li>
+	<li><a rel="me" href="https://bsky.app/profile/awise.us">Bluesky</a></li>
 </ul>
 
 <a href="/rss.xml"><img src="/images/feed-icon32x32.png">RSS Feed</a>
