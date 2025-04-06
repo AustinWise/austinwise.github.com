@@ -4,7 +4,7 @@ title: Home
 permalink: /
 ---
 
-<img id="myPic" src="Me.png">
+<img id="myPic" src="Me.V4.jpg">
 <h2>About Me</h2>
 <div>
 	I am a software engineer.
@@ -46,7 +46,6 @@ permalink: /
 <ul class="posts">
 	<li>Electronically mail me: my first name at this domain</li>
 	<li><a rel="me" href="https://mastodon.social/@AustinWise">Mastodon</a></li>
-	<li><a rel="me" href="https://mastodon.kame.moe/@turtle">Mastodon (old)</a></li>
 	<li><a rel="me" href="http://www.twitter.com/AustinWise">Twitter</a></li>
 	<li><a rel="me" href="https://www.linkedin.com/in/austinwise">Linked-In</a></li>
 	<li><a rel="me" href="https://bsky.app/profile/awise.us">Bluesky</a></li>

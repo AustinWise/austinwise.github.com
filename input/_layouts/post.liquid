@@ -3,6 +3,15 @@
 
 <head>
     {% include "head.liquid" %}
+
+    <!-- fediverse attribution -->
+    <meta name="fediverse:creator" content="@AustinWise@mastodon.social">
+
+    <!-- https://ogp.me/ -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.awise.us/{{ page.permalink }}" />
+    <meta property="og:image" content="https://www.awise.us/Me.V4.jpg" />
 </head>
 
 <body>
