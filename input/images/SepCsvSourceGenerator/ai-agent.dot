@@ -1,0 +1,13 @@
+digraph {
+    UserInput [label="User Input"];
+    LLM [label="LLM Inference"];
+    Print [label="Print Output"];
+    ToolCall [label="Tool Call"];
+    
+    UserInput -> LLM [label="Input"];
+    LLM -> Print [label="Output"];
+    LLM -> ToolCall [label="Tool Call"];
+    LLM -> UserInput;
+    ToolCall -> LLM [label="Tool Response"];
+    Print -> LLM;
+}
