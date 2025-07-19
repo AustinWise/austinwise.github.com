@@ -1,5 +1,5 @@
 @echo off
 setlocal
-cd %~dp0
+cd /d %~dp0
 
 PowerShell -NoProfile -NonInteractive -File serve.ps1 %*
