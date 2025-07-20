@@ -74,7 +74,7 @@ I have never written a C# source generator before, so it was slow going. I had n
 to extract out the information I needed from all the syntax trees. I modeled my implementation after the
 [Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen),
 copy-pasting snippets and tweaking them. Eventually I realized that what I was doing was almost
-entirely mechanical and could be could probably be accomplished using a coding AI agent.
+entirely mechanical and could probably be accomplished using a coding AI agent.
 
 I have published the result source generator on
 [Github](https://github.com/AustinWise/SepCsvSourceGenerator)
@@ -177,9 +177,9 @@ path. So personally I don't leave it unattended for to long.
 ### You don't have to let the tool do everything
 
 There have been several times where the tool generates something that is mostly works, but is not quite.
-I stop the tool and either tweak the code by hand or do a `git revert` and adjust the prompt.
+I'll stop the tool and either tweak the code by hand or do a `git revert` and adjust the prompt.
 
-For example, it's inital approach for compiling and running the source generator was overwrought.
+For example, its initial approach for compiling and running the source generator was overwrought.
 It create a big string with a test program, compiled the code, saved it to disk, dynamically loaded
 the code, used reflection to invoked it, and then used the `dynamic` keyword to refer to access properties.
 This worked, but it was a lot of moving parts that could break in ways that would be hard for either
@@ -187,9 +187,9 @@ a LLM or human to fix.
 
 Instead I tweaked the
 [test cases](https://github.com/AustinWise/SepCsvSourceGenerator/blob/0cc94df9b1f8d08c268132465fc88506250774dd/tests/SepCsvSourceGenerator.Analyzer.Tests/RunGeneratedParserTests.cs)
-to declare all they types within the test assembly, so that you get compile errors on those ealier.
+to declare all the types within the test assembly, so that you get compile errors on those earlier.
 The source generator also runs with the build of the test assembly. Thus all the test code and generated
-code can be easily referenced by the test cases, making it easier to spot what when wrong when there is
+code can be easily referenced by the test cases, making it easier to spot what went wrong when there is
 a typo in a property name.
 
 ## Conclusion
