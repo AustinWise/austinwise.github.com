@@ -171,8 +171,10 @@ There is a [know issue](https://github.com/google-gemini/gemini-cli/issues/1531)
 get stuck in an infinite loop. For me it stuck repeatedly trying to adjust the whitespace in the
 snap shot tests. I decided to let the agent cook, hoping it would get out of its rut.
 
-46 million tokens and $35 later, it was no closer. There are other times the LLM can go down the wrong
-path. So personally I don't leave it unattended for too long.
+I came back 30 minutes later and it had burned through 46 million tokens and $35.
+It was no closer to get the white space right.
+There are other times the LLM can go down the wrong path.
+So I don't leave the agent running autonomously for extended periods of time.
 
 ### You don't have to let the tool do everything
 
