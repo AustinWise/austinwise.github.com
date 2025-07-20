@@ -133,7 +133,7 @@ what I wanted and why.
 The [resulting code](https://github.com/AustinWise/SepCsvSourceGenerator/commit/9d2908b9eed7a75415c2fb06a502ad9155877354)
 did the job, but was not very maintainable. It put everything into one big class.
 
-To give the LLM an a guide on how to architect the source generator, I passed in the aformention
+To give the LLM a guide on how to architect the source generator, I passed in the aforementioned
 [Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen),
 code, telling it to do something similar. The
 [resulting code](https://github.com/AustinWise/SepCsvSourceGenerator/commit/d08830c6721e46de31fcbfcac279a46c7ff573e6)
@@ -142,7 +142,7 @@ emitting code.
 
 ### Add tests
 
-One I had the basic structure of the code and verified the source generator crated the expected output,
+Once I had the basic structure of the code and verified the source generator created the expected output,
 I attempted to do some refactoring using the LLM. The LLM made changes that compiled but broke the output.
 Without any tests to verify that what I was doing was doing, I was just vibe coding [^1].
 
@@ -172,7 +172,7 @@ get stuck in an infinite loop. For me it stuck repeatedly trying to adjust the w
 snap shot tests. I decided to let the agent cook, hoping it would get out of its rut.
 
 46 million tokens and $35 later, it was no closer. There are other times the LLM can go down the wrong
-path. So personally I don't leave it unattended for to long.
+path. So personally I don't leave it unattended for too long.
 
 ### You don't have to let the tool do everything
 
