@@ -4,14 +4,12 @@ title: Creating a C# source generator with AI agents
 published_date: 2025-07-01 16:00:00 -0700
 ---
 
-There are times where I want to write a computer program and it all comes spilling out. It is as if
-I have a rock and inside is a statue; I'm just chiseling around the statue to reveal it. I had that
-sort of feeling creating my [US federal tax calculator](https://github.com/AustinWise/TaxStuff/).
-I suppose this feeling comes when I have a clear vision for what I want to build and familiarly with
-all the tools and techniques. In this case the techniques were using [ANTLR](https://www.antlr.org/)
-to create a parser and and XML for creating file formats.
+When starting a programming project with a blank slate in an unfamiliar domain, it can be hard to get started.
+It can be hours and hundreds of lines of code before you have a program that does anything useful.
+In this initial stage it can be hard to keep the motivation to grind through it or even get started,
+particularly for side projects.
 
-Other times it's hard to get started, even on when I have a clear goal in mind. For example recently
+I have a side project like this that's been on the back burner for a while.
 I wanted to build a
 [C# source generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/)
 that would generate deserialization code for the [Sep CSV parser library](https://github.com/nietras/Sep/).
@@ -69,47 +67,43 @@ partial class MyCsvRecord
 }
 ```
 
-I have never written a C# source generator before, so it was slow going. I had never used the
-[Roslyn API](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/)
-to extract out the information I needed from all the syntax trees. I modeled my implementation after the
-[Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen),
-copy-pasting snippets and tweaking them. Eventually I realized that what I was doing was almost
+I initially started to write this source generator by hand. It was slow going.
+I have never written a Source Generator before and the last time I touched the
+[C# compiler API](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/),
+was at least 5 years ago.
+I modeled my implementation after the
+[Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen).
+This existing generator has a nice architecture, splitting the traversal of syntax tress from the
+generation of code. Its input and output are similar to the goal of my source generator: one function
+is generated for each annotated function.
+
+I copy-pasted a few lines at a time and tweaked them to be about CSV parsing instead of logging.
+This was painfully slow.
+Eventually I realized that what I was doing was almost
 entirely mechanical and could probably be accomplished using a coding AI agent.
 
+After using a coding AI agent to create the initial implementation and iterate on the feature set,
 I have published the result source generator on
-[Github](https://github.com/AustinWise/SepCsvSourceGenerator)
+[GitHub](https://github.com/AustinWise/SepCsvSourceGenerator)
 and
 [Nuget.org](https://www.nuget.org/packages/AWise.SepCsvSourceGenerator/).
 It's working well enough now for some of my personal projects. Continue reading if you want to know
 more about using AI agents to create a project in an unfamiliar domain.
 
-## What is an coding AI agent
+## What is an coding AI agent?
 
-> **Disclaimer:** While I currently do work within Google, this post is solely my own opinion and does not
-> represent the views of my employer. I'm going to make up my own definition of an AI agent.
+An AI coding takes the tradition AI chatbot interface and adds the ability for the AI to read & write
+files and execute commands. Further tools can be added using the
+[Model Context Protocol](https://modelcontextprotocol.io/).
 
-The definition of the term "AI agent" is at times nebulous. I've heard people talk about how AI agents
-are going to trivially solve a problem; described using the same sort of hand-waving and magical thinking
-that pervaded discussions about things like "blockchain" and "web3" a few years ago. There definitions
-like [this one](https://cloud.google.com/discover/what-are-ai-agents?hl=en) from Google Cloud that
-gets at the "what" but not so much the "how":
-
-> AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users.
-
-I like to conceive of an AI agent as a state machine that uses a large language model to drive some
-of the decision making for how it moves through states. Typically they use tool calling to cause some
-effect in the work (writing a file) or to get more context (reading a file). Besides using the normal
-mechanism of a state machine to guide their actions, they may also fill their context window with the
-past inputs and outputs of the LLM. This acts as a "memory" to guide future interactions.
-
-An AI coding agent is a special case of an AI agent. The goal is to translate a high level intent (add a new feature)
-into a series of actions to accomplish this. The state machine is roughly:
-
-![State machine of a coding agent](/images/SepCsvSourceGenerator/ai-agent.svg)
+You give them a prompt and then they start proposing changes to files. You can approve every change
+individually or just let them rip. Sometimes they will pause themselves to ask for clarification.
+If they start going down a bad path you can interrupt them and further prompt them to correct
+their direction.
 
 See [this article by Thorsten Ball](https://ampcode.com/how-to-build-an-agent) that shows how to make
-your llm coding agent. It's not much code. It's just a for loop that alternates between asking for
-user input, generating text with a LLM, and doing tool calls (reading and writing files).
+a simple AI coding agent. It's not much code. It's just a for loop that alternates between asking for
+user input, generating text with a LLM, and doing tool calls.
 
 ## Tips on using agentic coding tools
 
@@ -118,20 +112,26 @@ I used [Gemini Code Assist](https://codeassist.google/), both in the form of the
 [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist).
 Here are some tips that I found useful while writing my C# source generator.
 
+> **Disclaimer:** While I currently do work within Google, this post is solely my own opinion and does not
+> represent the views of my employer.
+
 ### Specify context to get better generation results
 
-Context can make the difference between having the LLM generate something mediocre or incorrect and the
+Context can be the difference between having the LLM generate something mediocre or incorrect and the
 LLM generating exactly what you want.
 
 To start with, I create a [sample program](https://github.com/AustinWise/SepCsvSourceGenerator/blob/agentic/SampleCsvCode/Program.cs)
-showing the expected input and output of the of my source generator. Iterated on this program and my
-prompt several times. This process reveled that I was not entirely clear about my intent with for the
+showing the expected input and output of the of my source generator. It took several iterations of this
+sample program to get the agent to generate what I wanted.
+This process reveled that I was not entirely clear about my intent with for the
 generator. For example, the initial version was not clear on what would happen if a column was missing
-from the CSV file. I added comments to the file and additional cases type of CSV columns to illustrate
+from the CSV file. I added comments to the file and additional types of CSV columns to illustrate
 what I wanted and why.
 
 The [resulting code](https://github.com/AustinWise/SepCsvSourceGenerator/commit/9d2908b9eed7a75415c2fb06a502ad9155877354)
 did the job, but was not very maintainable. It put everything into one big class.
+The code lacked any diagnostics to inform users of the source generator when they incorrectly used
+the code generator.
 
 To give the LLM a guide on how to architect the source generator, I passed in the aforementioned
 [Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen),
@@ -174,27 +174,22 @@ For me it stuck repeatedly trying to adjust the whitespace in the
 snap shot tests. I decided to let the agent cook, hoping it would get out of its rut.
 
 I came back 30 minutes later and it had burned through 46 million tokens and $35.
-It was no closer to get the white space right.
+It was no closer to getting the white space right.
 There are other times the LLM can go down the wrong path.
 So I don't leave the agent running autonomously for extended periods of time.
 
 ### You don't have to let the tool do everything
 
 There have been several times where the tool generates something that is mostly works, but is not quite.
-I'll stop the tool and either tweak the code by hand or do a `git revert` and adjust the prompt.
+Sometimes you can interject and add a message to correct its course.
+Sometimes the code is close enough I can tweak it a bit to get it to do what I want.
+Other times the tool and do a `git reset` and create a new prompt.
+Some changes I don't quite know how to put into words succinctly and its faster to just make the change.
 
-For example, its initial approach for compiling and running the source generator was overwrought.
-It create a big string with a test program, compiled the code, saved it to disk, dynamically loaded
-the code, used reflection to invoked it, and then used the `dynamic` keyword to refer to access properties.
-This worked, but it was a lot of moving parts that could break in ways that would be hard for either
-a LLM or human to fix.
-
-Instead I tweaked the
-[test cases](https://github.com/AustinWise/SepCsvSourceGenerator/blob/0cc94df9b1f8d08c268132465fc88506250774dd/tests/SepCsvSourceGenerator.Analyzer.Tests/RunGeneratedParserTests.cs)
-to declare all the types within the test assembly, so that you get compile errors on those earlier.
-The source generator also runs with the build of the test assembly. Thus all the test code and generated
-code can be easily referenced by the test cases, making it easier to spot what went wrong when there is
-a typo in a property name.
+Traditional refactoring tools can be a better fit for some changes.
+You can use Visual Studio to remove a parameter from a method faster than you can write the prompt to
+do so. Ever reference to the method will be updated with 100% accuracy, while an LLM is
+only probabilistically going to find all the references.
 
 ## Conclusion
 
@@ -203,18 +198,22 @@ going from an empty editor to the initial working generator. Just getting the pr
 right for the initial generation helped refine the design of this code generator.
 
 Once I had the initial code base, I used a mix of traditional programming and prompting to add more
-features and polish the codebase. Adding a failing unit test and having Gemini fixed it worked well.
-Other types of refactoring were more amenable to traditional refactoring tools. For example, removing
-a parameter from method is something that Visual Studio can do with 100% accuracy, while an LLM is
-only probabilistically going to find all the references.
-
+features and polish the codebase.
 This process also highlights the continued importance of traditional software development tools. The
 determinism and accuracy of tools like compilers and unit tests provide useful context to guide the
 LLM's output and keep its proclivity to generate plausible but incorrect code in check.
 
+I'm not sure what to feel about the future of programming with these tools.
+Sometimes I feel sad that Gemini is having all the fun writing code.
+Other times its pretty cool to have it do a tedious refactoring while I'm cooking dinner.
+I'm also not sure how well this approach scales to maintaining a larger existing codebase, as everything
+in this project was quite small and self-contained. The entire code base fits in the context window.
+
+Whatever the future holds, I think the tool is useful even in its current form and I will be trying
+it out with other projects.
+
 ## Footnotes
 
-[^1]: I stuck this at the end, because this is a pet peeve of mine that is not wholly germane to this post.
-      [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is a way of using AI agent tools where
-      the human author surrenders their agency to the agent and lets it do whatever it wants.
+[^1]: [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is a way of using AI coding agent tools where
+      the human author completely surrenders their agency to the agent and lets it do whatever it wants.
       It is might be fun, but it's not software engineering.
