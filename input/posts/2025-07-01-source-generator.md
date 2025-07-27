@@ -140,7 +140,7 @@ code, telling it to do something similar. The
 had the shape I desired, splitting the source generation logic between parsing the syntax trees and
 emitting code.
 
-### Add tests
+### Tests are important as ever
 
 Once I had the basic structure of the code and verified the source generator created the expected output,
 I attempted to do some refactoring using the LLM. The LLM made changes that compiled but broke the output.
@@ -165,10 +165,12 @@ To make sure the generated code is not garbage, these baseline tests make sure e
 without warnings and I still check the snapshots each time they are changed. I also have it use a
 code formatter to ensure consistent style.
 
-### Infinite loops
+### Watch out for the agent getting caught in an infinite loop
 
-There is a [know issue](https://github.com/google-gemini/gemini-cli/issues/1531) where the agent can
-get stuck in an infinite loop. For me it stuck repeatedly trying to adjust the whitespace in the
+LLMs sometimes get stuck in an infinite loop where they repeatedly say the same thing.
+There is a [known issue](https://github.com/google-gemini/gemini-cli/issues/1531) in Gemini CLI where
+this problem presents as repeatedly trying to do the same thing.
+For me it stuck repeatedly trying to adjust the whitespace in the
 snap shot tests. I decided to let the agent cook, hoping it would get out of its rut.
 
 I came back 30 minutes later and it had burned through 46 million tokens and $35.
@@ -213,4 +215,6 @@ LLM's output and keep its proclivity to generate plausible but incorrect code in
 ## Footnotes
 
 [^1]: I stuck this at the end, because this is a pet peeve of mine that is not wholly germane to this post.
-      [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)
+      [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is a way of using AI agent tools where
+      the human author surrenders their agency to the agent and lets it do whatever it wants.
+      It is might be fun, but it's not software engineering.
