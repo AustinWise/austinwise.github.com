@@ -73,7 +73,8 @@ I have never written a Source Generator before and the last time I touched the
 [C# compiler API](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/),
 was at least 5 years ago.
 I modeled my implementation after the
-[Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen).
+[Microsoft.Extensions.Logging source generator](https://learn.microsoft.com/en-us/dotnet/core/extensions/logger-message-generator)
+([source code](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen)).
 This existing generator has a nice architecture, splitting the traversal of syntax trees from the
 generation of code. Its input and output are similar to the goal of my source generator: one function
 is generated for each annotated function.
