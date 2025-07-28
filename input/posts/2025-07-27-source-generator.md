@@ -91,9 +91,9 @@ and
 It's working well enough now for some of my personal projects. Continue reading if you want to know
 more about using AI agents to create a project in an unfamiliar domain.
 
-## What is an coding AI agent?
+## What is a coding AI agent?
 
-An AI coding takes the tradition AI chatbot interface and adds the ability for the AI to read & write
+An AI coding agent takes the traditional AI chatbot interface and adds the ability for the AI to read & write
 files and execute commands. Further tools can be added using the
 [Model Context Protocol](https://modelcontextprotocol.io/).
 
@@ -153,7 +153,7 @@ that worked most of the time.
 
 ### Create tools and instructions to help the LLM
 
-To ensure that the generated output of the source generator does not change unexpected, I
+To ensure that the generated output of the source generator does not change unexpectedly, I
 [added some snapshot tests](https://github.com/AustinWise/SepCsvSourceGenerator/commit/87936bc60e7f56cf383b9301d53725a51ce2f463).
 The LLM was able to generally create and fix snapshot tests for the most part. But it really struggled
 to get the whitespace perfect.
@@ -182,15 +182,15 @@ So I don't leave the agent running autonomously for extended periods of time.
 
 ### You don't have to let the tool do everything
 
-There have been several times where the tool generates something that is mostly works, but is not quite.
+There have been several times where the tool generates something that mostly works, but is not quite.
 Sometimes you can interject and add a message to correct its course.
 Sometimes the code is close enough I can tweak it a bit to get it to do what I want.
-Other times the tool and do a `git reset` and create a new prompt.
-Some changes I don't quite know how to put into words succinctly and its faster to just make the change.
+Other times the tool totally misunderstands the prompt and I do a `git reset` and create a new prompt.
+Some changes I don't quite know how to put into words succinctly and it's faster to just make the change.
 
 Traditional refactoring tools can be a better fit for some changes.
 You can use Visual Studio to remove a parameter from a method faster than you can write the prompt to
-do so. Ever reference to the method will be updated with 100% accuracy, while an LLM is
+do so. Every reference to the method will be updated with 100% accuracy, while an LLM is
 only probabilistically going to find all the references.
 
 ## Conclusion
@@ -207,7 +207,7 @@ LLM's output and keep its proclivity to generate plausible but incorrect code in
 
 I'm not sure what to feel about the future of programming with these tools.
 Sometimes I feel sad that Gemini is having all the fun writing code.
-Other times its pretty cool to have it do a tedious refactoring while I'm cooking dinner.
+Other times it's pretty cool to have it do tedious refactoring while I'm cooking dinner.
 I'm also not sure how well this approach scales to maintaining a larger existing codebase, as everything
 in this project was quite small and self-contained. The entire code base fits in the context window.
 
@@ -218,4 +218,4 @@ it out with other projects.
 
 [^1]: [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is a way of using AI coding agent tools where
       the human author completely surrenders their agency to the agent and lets it do whatever it wants.
-      It is might be fun, but it's not software engineering.
+      It might be fun, but it's not software engineering.
