@@ -124,9 +124,9 @@ Context can be the difference between having the LLM generate something mediocre
 LLM generating exactly what you want.
 
 To start with, I create a [sample program](https://github.com/AustinWise/SepCsvSourceGenerator/blob/agentic/SampleCsvCode/Program.cs)
-showing the expected input and output of the of my source generator. It took several iterations of this
+showing the expected input and output of my source generator. It took several iterations of this
 sample program to get the agent to generate what I wanted.
-This process reveled that I was not entirely clear about my intent with for the
+This process revealed that I was not entirely clear about my intent for the
 generator. For example, the initial version was not clear on what would happen if a column was missing
 from the CSV file. I added comments to the file and additional types of CSV columns to illustrate
 what I wanted and why.
@@ -137,7 +137,7 @@ The code lacked any diagnostics to inform users of the source generator when the
 the code generator.
 
 To give the LLM a guide on how to architect the source generator, I passed in the aforementioned
-[Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen),
+[Microsoft.Extensions.Logging source generator](https://github.com/dotnet/runtime/tree/ea721e7486615b95c8ede98a6f54aa5178d4c888/src/libraries/Microsoft.Extensions.Logging.Abstractions/gen)
 code, telling it to do something similar. The
 [resulting code](https://github.com/AustinWise/SepCsvSourceGenerator/commit/d08830c6721e46de31fcbfcac279a46c7ff573e6)
 had the shape I desired, splitting the source generation logic between parsing the syntax trees and
