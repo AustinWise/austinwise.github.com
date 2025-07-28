@@ -4,7 +4,7 @@ title: Creating a C# source generator with AI agents
 published_date: 2025-07-01 16:00:00 -0700
 ---
 
-When starting a programming project with a blank slate in an unfamiliar domain, it can be hard to get started.
+Starting a programming project with a blank slate in an unfamiliar domain can feel daunting.
 It can be hours and hundreds of lines of code before you have a program that does anything useful.
 In this initial stage it can be hard to keep the motivation to grind through it or even get started,
 particularly for side projects.
