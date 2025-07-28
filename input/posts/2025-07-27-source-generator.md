@@ -1,7 +1,8 @@
 ---
 layout: post.liquid
-title: Creating a C# source generator with AI agents
-published_date: 2025-07-01 16:00:00 -0700
+title: Creating a C# source generator with AI coding agents
+published_date: 2025-07-27 21:00:00 -0700
+description: Reflections on building a simple greenfield project using AI coding agents.
 ---
 
 Starting a programming project with a blank slate in an unfamiliar domain can feel daunting.
