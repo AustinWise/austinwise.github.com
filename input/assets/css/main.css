@@ -157,6 +157,8 @@ header .homeLink
 	float: right;
 	margin: .5em;
 	border-radius: 1em;
+    width: 200px;
+    height: 200px;
 }
 
 footer
