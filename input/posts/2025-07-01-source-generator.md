@@ -9,7 +9,7 @@ It can be hours and hundreds of lines of code before you have a program that doe
 In this initial stage it can be hard to keep the motivation to grind through it or even get started,
 particularly for side projects.
 
-I have a side project like this that's been on the back burner for a while.
+I have a side project like this that's been on my TODO list for a while.
 I wanted to build a
 [C# source generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/)
 that would generate deserialization code for the [Sep CSV parser library](https://github.com/nietras/Sep/).
@@ -79,8 +79,8 @@ is generated for each annotated function.
 
 I copy-pasted a few lines at a time and tweaked them to be about CSV parsing instead of logging.
 This was painfully slow.
-Eventually I realized that what I was doing was almost
-entirely mechanical and could probably be accomplished using a coding AI agent.
+Eventually I realized that what I was doing was fairly
+mechanical and could probably be accomplished using a coding AI agent.
 
 After using a coding AI agent to create the initial implementation and iterate on the feature set,
 I have published the result source generator on
@@ -112,8 +112,9 @@ I used [Gemini Code Assist](https://codeassist.google/), both in the form of the
 [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist).
 Here are some tips that I found useful while writing my C# source generator.
 
-> **Disclaimer:** While I currently do work within Google, this post is solely my own opinion and does not
-> represent the views of my employer.
+> **Disclosure:** My choice to use Gemini Code Assist in preference to other similar tools is partly
+> driven by a desire to try out what other people at my company are working on.
+> This post is solely my own opinion and does not represent the views of my employer.
 
 ### Specify context to get better generation results
 
