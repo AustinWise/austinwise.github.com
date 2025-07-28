@@ -13,7 +13,7 @@ particularly for side projects.
 I have a side project like this that's been on my TODO list for a while.
 I wanted to build a
 [C# source generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/)
-that would generate deserialization code for the [Sep CSV parser library](https://github.com/nietras/Sep/).
+that would generate deserialization code for the excellent [Sep CSV parser library](https://github.com/nietras/Sep/).
 That is, it would take input like this:
 
 ```c#
