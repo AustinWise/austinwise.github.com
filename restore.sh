@@ -9,21 +9,31 @@ then
     exit 0
 fi
 
-version=v0.19.2
+version=v0.20.0
 
 os=$(uname -s | tr A-Z a-z)
 vendor=unknown
 case $os in
     darwin)
-        arch=x86_64
         vendor=apple
         ;;
     linux)
         os=linux-gnu
-        arch=$(uname -m)
         ;;
     *)
         echo unknown OS: $os
+        exit 1
+        ;;
+esac
+arch=$(uname -m)
+case $arch in
+    x86_64)
+        ;;
+    arm64)
+        arch=aarch64
+        ;;
+    *)
+        echo unknown architecture: $arch
         exit 1
         ;;
 esac
