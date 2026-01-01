@@ -20,21 +20,11 @@ case $os in
     linux)
         os=linux-gnu
         ;;
-    *)
-        echo unknown OS: $os
-        exit 1
-        ;;
 esac
 arch=$(uname -m)
 case $arch in
-    x86_64)
-        ;;
     arm64)
         arch=aarch64
-        ;;
-    *)
-        echo unknown architecture: $arch
-        exit 1
         ;;
 esac
 
