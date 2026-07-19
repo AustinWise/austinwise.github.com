@@ -12,8 +12,7 @@ digraph G {
         j3 -> j4 -> j5 -> j6;
         label = "Java GC Heap";
     }
-    d0 -> j0;
-    j2 -> d2;
 
-    d5 -> j3;
+    d0 -> j0;
+    d2 -> j2;
 }

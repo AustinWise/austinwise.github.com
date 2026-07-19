@@ -23,6 +23,17 @@ digraph G {
         j0 -> j1 -> j2;
         j3 -> j4 -> j5 -> j6;
 
+        j2 -> j1 [color=blue];
+        j1 -> j0 [color=blue];
+        j0 -> j2 [color=blue];
+
+        j6 -> j5 [color=blue];
+        j5 -> j4 [color=blue];
+        j4 -> j3 [color=blue];
+        j3 -> j6 [color=blue];
+
+        j3 -> j0 [color=green];
+
         label = "Java GC Heap";
     }
 

@@ -1,5 +1,5 @@
 
-all: heap1.svg heap2.svg
+all: naive.svg heap1.svg heap2.svg heap3.svg
 
 .PHONY: all
 
