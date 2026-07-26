@@ -1,20 +1,28 @@
 digraph G {
+    compound=true;
+
     subgraph cluster_0 {
         d0 -> d1 -> d2 -> d0;
         d3 -> d4 -> d5 -> d6 -> d3;
         d6 -> d4;
         d0 -> d3;
 
-        d2 -> d1 [color=blue];
-        d1 -> d0 [color=blue];
-        d0 -> d2 [color=blue];
+        subgraph cluster_2 {
+            label = "SSC 1";
+            d0;
+            d1;
+            d2;
+        }
 
-        d6 -> d5 [color=blue];
-        d5 -> d4 [color=blue];
-        d4 -> d3 [color=blue];
-        d3 -> d6 [color=blue];
+        subgraph cluster_3 {
+            label = "SSC 2";
+            d3;
+            d4;
+            d5;
+            d6;
+        }
 
-        d3 -> d0 [color=green];
+        d0 -> d3 [ltail=cluster_2, lhead=cluster_3, color=green];
 
         label = ".NET GC Heap";
     }
@@ -32,11 +40,8 @@ digraph G {
         j4 -> j3 [color=blue];
         j3 -> j6 [color=blue];
 
-        j3 -> j0 [color=green];
+        j0 -> j3 [color=green];
 
         label = "Java GC Heap";
     }
-
-    d0 -> j0;
-    d2 -> j2;
 }
