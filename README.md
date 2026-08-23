@@ -1,6 +1,6 @@
 # How to build
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ff3f28b6-3f4d-452f-9bb1-6d60e1c1faad/deploy-status)](https://app.netlify.com/sites/austinwise/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff3f28b6-3f4d-452f-9bb1-6d60e1c1faad/deploy-status)](https://app.netlify.com/projects/austinwise/deploys)
 
 This site is built with
 [Cobalt](https://cobalt-org.github.io/)
@@ -16,20 +16,34 @@ There are some of scripts:
 
  Even though Cobalt is easy to run outside a container,
 there are some scripts for running Cobalt inside the
-[Netlify Docker image](https://github.com/netlify/build-image/blob/focal/Dockerfile)
+[Netlify Docker image](https://hub.docker.com/r/netlify/build)
 to make sure it works as intended. There are scripts to start the Docker container
 from Linux and Windows:
 
 * serve_docker.cmd
 * serve_docker.sh
 
-# Custom build of Cobalt
+# Updating personal picture
 
-Currently there are some small bugs in Cobalt:
+Install ImageMagick and libheif plugins:
 
-https://github.com/AustinWise/cobalt.rs
+```bash
+sudo apt install imagemagick-7.q16hdri libheif-plugins-all
+```
 
-# Why not GitHub Pages?
+Create a 400 x 400 PNG file (todo: why this size? what about high DPI).
+Then use that as the source to create different image formats:
 
-Seriously, that would be quite a bit simpler. But I tried to upload a large HTML
-file and it was not showing up on my website.
+```bash
+magick Me.VX.png Me.V4.jpeg
+magick Me.VX.png Me.V4.avif
+# ...
+```
+
+The search for "Me.V" in this repo and update references.
+
+Currently the favicon is 32x32 pixels and PNG.
+
+# Why Netlify and not GitHub Pages?
+
+I honestly cannot remember...
