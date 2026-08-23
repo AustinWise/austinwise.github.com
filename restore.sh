@@ -9,7 +9,7 @@ then
     exit 0
 fi
 
-version=v0.20.0
+version=v0.20.4
 
 os=$(uname -s | tr A-Z a-z)
 vendor=unknown
