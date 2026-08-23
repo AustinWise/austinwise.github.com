@@ -1,0 +1,15 @@
+digraph G {
+    subgraph cluster_0 {
+        d0 -> d1 -> d2 -> d0;
+        d3 -> d4 -> d5 -> d6 -> d3;
+        d6 -> d4;
+        d0 -> d3;
+        label = ".NET GC Heap";
+    }
+
+    subgraph cluster_1 {
+        j0 -> j1 -> j2;
+        j3 -> j4 -> j5 -> j6;
+        label = "Java GC Heap";
+    }
+}
