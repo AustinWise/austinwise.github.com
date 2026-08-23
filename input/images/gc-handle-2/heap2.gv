@@ -22,7 +22,7 @@ digraph G {
             d6;
         }
 
-        d0 -> d3 [ltail=cluster_2, lhead=cluster_3, color=green];
+        d0 -> d3 [ltail=cluster_2, lhead=cluster_3, color=green, minlen = 2];
 
         label = ".NET GC Heap";
     }
