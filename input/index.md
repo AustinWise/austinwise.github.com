@@ -4,7 +4,14 @@ title: Home
 permalink: /
 ---
 
-<img id="myPic" src="Me.V4.jpg">
+<picture>
+    <source srcset="Me.V5.heic" type="image/heic" />
+    <source srcset="Me.V5.avif" type="image/avif" />
+    <source srcset="Me.V5.webp" type="image/webp" />
+    <source srcset="Me.V5.jpeg" type="image/jpeg" />
+    <img src="Me.V5.jpeg" id="myPic" alt="A picture of myself.">
+</picture>
+
 <h2>About Me</h2>
 <div>
 	I am a software engineer.
