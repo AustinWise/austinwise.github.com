@@ -1,3 +1,14 @@
+/*
+ * The following is based on HTML5 boiler plate. I've make some tweaks to the
+ * colors below. The colors are from https://colorhunt.co/palette/3a86ffbdb2ffffd6e0fff4f4.
+ * The colors from that page are are:
+ *  * #FFF4F4 - light background pink
+ *  * #FFD6E0 - light pink
+ *  * #BDB2FF - lightish purple
+ *  * #3A86FF - a darker blue
+ */
+
+
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -166,7 +177,7 @@ footer
 
 .date
 {
-  color: #DDCB9D;
+  color: #FFD6E0;
 }
 
 pre
@@ -178,12 +189,12 @@ pre
 
 html
 {
-  background-color: #FFEDBF;
+  background-color: #FFF4F4;
 }
-a, a:active, a:visited { color: #F54828; }
-a:hover { color: #F7803C; }
-::-moz-selection{ background: #F54828; color:#fff; text-shadow: none; }
-::selection { background:#F54828; color:#fff; text-shadow: none; }
+a, a:active, a:visited { color: #3A86FF; }
+a:hover { color: #FFD6E0; }
+::-moz-selection{ background: #BDB2FF; color:#fff; text-shadow: none; }
+::selection { background:#BDB2FF; color:#fff; text-shadow: none; }
 
 
 table, td, th {
