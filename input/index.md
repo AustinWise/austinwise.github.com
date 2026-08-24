@@ -37,7 +37,7 @@ permalink: /
 	{% endfor %}
 </ul>
 
-<!--
+{% comment %}
 <h2 id="pr">Accepted Pull Requests</h2>
 <ul class="posts">
 	{% for pull in site.data.pull_requests %}
@@ -47,7 +47,7 @@ permalink: /
 		{% endif %}
 	{% endfor %}
 </ul>
--->
+{% endcomment %}
 
 <h2>Contact Me</h2>
 <ul class="posts">
