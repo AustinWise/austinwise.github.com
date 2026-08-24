@@ -188,6 +188,15 @@ a:hover { color: #F7803C; }
 ::selection { background:#F54828; color:#fff; text-shadow: none; }
 
 
+table, td, th {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.post img {
+    max-width: 100%;
+}
+
 
 
 
@@ -374,13 +383,4 @@ a:hover { color: #F7803C; }
     h3 {
         page-break-after: avoid;
     }
-}
-
-table, td, th {
-    border-width: 1px;
-    border-style: solid;
-}
-
-.post img {
-    max-width: 100%;
 }
