@@ -49,13 +49,6 @@ permalink: /
 </ul>
 {% endcomment %}
 
-<h2>Contact Me</h2>
-<ul class="posts">
-	<li>Electronically mail me: my first name at this domain</li>
-	<li><a rel="me" href="https://mastodon.social/@AustinWise">Mastodon</a></li>
-	<li><a rel="me" href="http://www.twitter.com/AustinWise">Twitter</a></li>
-	<li><a rel="me" href="https://www.linkedin.com/in/austinwise">Linked-In</a></li>
-	<li><a rel="me" href="https://bsky.app/profile/awise.us">Bluesky</a></li>
-</ul>
+<h2>Syndication and Contact</h2>
 
-<a href="/rss.xml"><img src="/images/feed-icon32x32.png">RSS Feed</a>
+{% include "cta.liquid" %}

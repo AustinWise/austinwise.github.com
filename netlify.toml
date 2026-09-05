@@ -2,12 +2,10 @@
 publish = "_site/"
 command = "bash build.sh"
 
-[[redirects]]
-from = "/.well-known/webfinger*"
-to = "https://mastodon.kame.moe/.well-known/webfinger:splat"
-status = 301
-
 [[headers]]
-for = "/.well-known/webfinger*"
-[headers.values]
-Access-Control-Allow-Origin = "*"
+  for = "/rss.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml"
+
+# TODO: figure out how to enable webfiger redirection for Mastodon
+# https://docs.joinmastodon.org/spec/webfinger/
